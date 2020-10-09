@@ -12,10 +12,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{2FCD02D1-EE34-4301-EB93-4AEBC05262AD}</ProjectGuid>
+    <ProjectGuid>{2515BBAB-A86C-2862-801A-CE4ECFA9E8FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -25,7 +25,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_0;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;NET_4_6;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_0;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -58,24 +58,62 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FRPGraph\Editor\FRPGraphEditorWindow.cs" />
-     <Compile Include="Assets\FRPGraph\Editor\FRPGraphView.cs" />
-     <Compile Include="Assets\FRPGraph\Editor\GraphSaveUtility.cs" />
-     <Compile Include="Assets\FRPGraph\Editor\NodeFactory.cs" />
-     <Compile Include="Assets\FRPGraph\Editor\NodeSearchWindow.cs" />
-     <Compile Include="Assets\FRPGraph\Editor\Nodes\FrpNode.cs" />
-     <Compile Include="Assets\FRPGraph\Editor\Nodes\PortType.cs" />
-     <Compile Include="Assets\uREPL\Scripts\Editor\MainEditor.cs" />
-     <None Include="Assets\FRPGraph\Editor\Resources\FRPGraph.uss" />
-     <None Include="Assets\FRPGraph\Editor\Resources\Node.uss" />
-     <None Include="Assets\FRPGraph\Editor\Resources\FrpNode.uss" />
-     <None Include="Assets\FRPGraph\Editor\Resources\ToolBar.uss" />
- <Reference Include="UnityEditor.TestRunner">
- <HintPath>C:/Users/kouichi/work/unity_work/FRP_Graph/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Users/kouichi/work/unity_work/FRP_Graph/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
- </Reference>
+     <Compile Include="Assets\FRPGraph\Runtime\DialogueNodeData.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\DependencyGraph.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\IntermediateRepresentation.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\NodeDataTable.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\CommentBlockData.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\ExposedProperty.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\FrpNodeData.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\NodeLinkData.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\FrpGraphContainer.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\OperatorType.cs" />
+     <Compile Include="Assets\uREPL\Examples\Scripts\FieldItemTest.cs" />
+     <Compile Include="Assets\uREPL\Examples\Scripts\RuntimeCommandTest.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Completions\CommandCompletion.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Completions\GameObjectNameCompletion.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Completions\GameObjectPathCompletion.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Completions\GlobalClassCompletion.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Completions\MonoCompletion.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Completions\RuntimeCommandCompletion.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\Command.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\Completion.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\CompletionPlugin.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\Evaluator.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\Extension.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\History.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\Inspector.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\Key.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\Log.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\Main.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\Mono.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\Parameters.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\RuntimeCommand.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Core\Utility.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\FieldItems\BoolFieldItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\FieldItems\EnumFieldItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\FieldItems\FieldItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\FieldItems\GameObjectComponentItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\FieldItems\ReadonlyFieldItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\FieldItems\SingleFieldItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\FieldItems\Vector2FieldItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\FieldItems\Vector3FieldItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\FieldItems\Vector4FieldItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\OutputItems\ComponentItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\OutputItems\GameObjectItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\OutputItems\LogItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\OutputItems\ResultItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\Window\AnnotationView.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\Window\CommandInputField.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\Window\CommandView.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\Window\CompletionItem.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\Window\CompletionView.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\Window\EnterButton.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\Window\KeyBinding.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\Window\OutputView.cs" />
+     <Compile Include="Assets\uREPL\Scripts\Gui\Window\Window.cs" />
+     <None Include="Assets\uREPL\Resources\uREPL\Xmls\UnityEngineClasses.xml" />
+     <None Include="Assets\uREPL\Resources\uREPL\Xmls\Help.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/kouichi/work/unity_work/FRP_Graph/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
@@ -301,26 +339,8 @@
  <Reference Include="UnityEngine.XRModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.VR">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.WindowsStandalone.Extensions">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.WebGL.Extensions">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
- </Reference>
  <Reference Include="Mono.CSharp">
  <HintPath>C:/Users/kouichi/work/unity_work/FRP_Graph/Assets/uREPL/Plugins/Mono.CSharp.dll</HintPath>
- </Reference>
- <Reference Include="ICSharpCode.NRefactory">
- <HintPath>C:/Users/kouichi/work/unity_work/FRP_Graph/Library/PackageCache/com.unity.render-pipelines.core@7.3.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
- </Reference>
- <Reference Include="nunit.framework">
- <HintPath>C:/Users/kouichi/work/unity_work/FRP_Graph/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -676,12 +696,6 @@
  <Reference Include="Boo.Lang">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{2515BBAB-A86C-2862-801A-CE4ECFA9E8FE}</Project>
-      <Name>Assembly-CSharp</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
