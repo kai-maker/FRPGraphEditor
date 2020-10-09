@@ -10,4 +10,7 @@
 
 /[Aa]ssets/Plugins/Editor/JetBrains*
 
+Old
+Assets/uREPL*
+
 .idea/
