@@ -1,0 +1,27 @@
+﻿.map #title {
+}
+
+.switch #title {
+}
+
+EdgeControl {
+    align-items: center;
+    justify-content: center;
+}
+
+EdgeControl > TextField {
+    top: -5;
+}
+
+EdgeControl Label {
+    width: 0;
+    min-width: 0;
+    visibility: hidden;
+}
+
+EdgeControl TextInput {
+    min-width: 80;
+    height: 20;
+    border-color: white;
+    background-color: #000000;
+}
