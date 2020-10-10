@@ -58,16 +58,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FRPGraph\Runtime\DialogueNodeData.cs" />
-     <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\DependencyGraph.cs" />
-     <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\IntermediateRepresentation.cs" />
-     <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\NodeDataTable.cs" />
-     <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\CommentBlockData.cs" />
-     <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\ExposedProperty.cs" />
-     <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\FrpNodeData.cs" />
-     <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\NodeLinkData.cs" />
-     <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\FrpGraphContainer.cs" />
-     <Compile Include="Assets\FRPGraph\Runtime\OperatorType.cs" />
      <Compile Include="Assets\uREPL\Examples\Scripts\FieldItemTest.cs" />
      <Compile Include="Assets\uREPL\Examples\Scripts\RuntimeCommandTest.cs" />
      <Compile Include="Assets\uREPL\Scripts\Completions\CommandCompletion.cs" />
@@ -696,6 +686,12 @@
  <Reference Include="Boo.Lang">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="FRPGraph_Runtime.csproj">
+      <Project>{341F2EA0-F5FE-7A65-F9D5-FCCBE655D999}</Project>
+      <Name>FRPGraph_Runtime</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -682,6 +682,10 @@
       <Project>{2515BBAB-A86C-2862-801A-CE4ECFA9E8FE}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="FRPGraph_Runtime.csproj">
+      <Project>{341F2EA0-F5FE-7A65-F9D5-FCCBE655D999}</Project>
+      <Name>FRPGraph_Runtime</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
