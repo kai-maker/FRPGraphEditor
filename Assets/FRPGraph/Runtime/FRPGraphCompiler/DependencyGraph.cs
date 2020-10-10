@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Boo.Lang.Runtime;
 using UnityEngine;
 
 namespace FRPGraph.Runtime
@@ -90,7 +89,7 @@ namespace FRPGraph.Runtime
             var isDag = list.All(node => node.InputLinks.Count == 0 && node.OutputLinks.Count == 0);
             if (!isDag)
             {
-                throw new RuntimeException("Graph is not DAG");
+                throw new Exception("Graph is not DAG");
             }
             
             return resultList;
