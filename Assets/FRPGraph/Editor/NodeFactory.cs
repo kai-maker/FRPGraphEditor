@@ -16,9 +16,9 @@ namespace FRPGraph.Editor
         
         public static FrpNode CreateNode(FrpNodeData frpNodeData)
         {
-            switch (frpNodeData.OperatorType)
+            switch (frpNodeData.serializedOperatorType)
             {
-                case OperatorType.Map:
+                case SerializedOperatorType.Map:
                 {
                     var node = GeneratePorts(
                         new List<(Type portType, string portName)>{(typeof(Stream), portName: "Sin")}, 
@@ -26,7 +26,7 @@ namespace FRPGraph.Editor
                         frpNodeData);
                     return node;
                 }
-                case OperatorType.Snapshot:
+                case SerializedOperatorType.Snapshot:
                 {
                     var node = GeneratePorts(
                         new List<(Type portType, string portName)>
@@ -38,7 +38,7 @@ namespace FRPGraph.Editor
                         frpNodeData);
                     return node;
                 }
-                case OperatorType.Merge:
+                case SerializedOperatorType.Merge:
                 {
                     var node = GeneratePorts(
                         new List<(Type portType, string portName)>
@@ -50,7 +50,7 @@ namespace FRPGraph.Editor
                         frpNodeData);
                     return node;
                 }
-                case OperatorType.Lift:
+                case SerializedOperatorType.Lift:
                 {
                     var node = GeneratePorts(
                         new List<(Type portType, string portName)>
@@ -62,7 +62,7 @@ namespace FRPGraph.Editor
                         frpNodeData);
                     return node;
                 }
-                case OperatorType.Filter:
+                case SerializedOperatorType.Filter:
                 {
                     var node = GeneratePorts(
                         new List<(Type portType, string portName)>
@@ -73,31 +73,31 @@ namespace FRPGraph.Editor
                         frpNodeData);
                     return node;
                 }
-                case OperatorType.SwitchS:
+                case SerializedOperatorType.SwitchS:
                     return GeneratePorts(
                         new List<(Type portType, string portName)>{(typeof(Cell<Stream>), portName: "Cell<Stream>0")}, 
                         new List<(Type portType, string portName)>{(typeof(Stream), "Stream")},
                         frpNodeData);
                 
-                case OperatorType.SwitchC:
+                case SerializedOperatorType.SwitchC:
                     return GeneratePorts(
                         new List<(Type portType, string portName)>{(typeof(Cell<Cell>), portName: "Cell<Cell>0")}, 
                         new List<(Type portType, string portName)>{(typeof(Stream), "Stream")},
                         frpNodeData);
                 
-                case OperatorType.Cell_Stream:
+                case SerializedOperatorType.Cell_Stream:
                     return GeneratePorts(
                         new List<(Type portType, string portName)>(), 
                         new List<(Type portType, string portName)>{(typeof(Cell<Stream>), "Cell_Stream")},
                         frpNodeData);
                 
-                case OperatorType.Cell_Cell:
+                case SerializedOperatorType.Cell_Cell:
                     return GeneratePorts(
                         new List<(Type portType, string portName)>(), 
                         new List<(Type portType, string portName)>{(typeof(Cell<Cell>), "Cell_Cell")},
                         frpNodeData);
                 
-                default: throw new RuntimeException($"No definition found for the operator {frpNodeData.OperatorType}");
+                default: throw new RuntimeException($"No definition found for the operator {frpNodeData.serializedOperatorType}");
             }
         }
 
@@ -134,8 +134,8 @@ namespace FRPGraph.Editor
             
             node.SetPosition(new Rect(frpNodeData.Position, defaultNodeSize));
 
-            node.title = frpNodeData.OperatorType.ToString();
-            node.AddToClassList(frpNodeData.OperatorType.ToString().ToLower());
+            node.title = frpNodeData.serializedOperatorType.ToString();
+            node.AddToClassList(frpNodeData.serializedOperatorType.ToString().ToLower());
 
             return node;
         }

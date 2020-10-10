@@ -67,7 +67,7 @@
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\FrpNodeData.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\NodeLinkData.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\FrpGraphContainer.cs" />
-     <Compile Include="Assets\FRPGraph\Runtime\OperatorType.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\SerializedOperatorType.cs" />
      <None Include="Assets\FRPGraph\Runtime\FRPGraph_Runtime.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/kouichi/work/unity_work/FRP_Graph/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
@@ -615,9 +615,6 @@
  <Reference Include="System.Xml.Serialization">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\FRPGraph\Runtime\Operator" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

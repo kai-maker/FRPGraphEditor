@@ -1,6 +1,6 @@
 ﻿namespace NewFrpGraph
 {
-    public enum OperatorType
+    public enum SerializedOperatorType
     {
         Map,
         Lift,

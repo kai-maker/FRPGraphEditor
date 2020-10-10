@@ -32,39 +32,39 @@ public class NodeSearchWindow : ScriptableObject, ISearchWindowProvider
             new SearchTreeGroupEntry(new GUIContent("Node"), 1),
             new SearchTreeEntry(new GUIContent("Map Node", _indentationIcon))
             {
-                userData = OperatorType.Map, level = 2
+                userData = SerializedOperatorType.Map, level = 2
             },
             new SearchTreeEntry(new GUIContent("Lift Node", _indentationIcon))
             {
-                userData = OperatorType.Lift, level = 2
+                userData = SerializedOperatorType.Lift, level = 2
             },
             new SearchTreeEntry(new GUIContent("SnapShot Node", _indentationIcon))
             {
-                userData = OperatorType.Snapshot, level = 2
+                userData = SerializedOperatorType.Snapshot, level = 2
             },
             new SearchTreeEntry(new GUIContent("Merge Node", _indentationIcon))
             {
-                userData = OperatorType.Merge, level = 2
+                userData = SerializedOperatorType.Merge, level = 2
             },
             new SearchTreeEntry(new GUIContent("Filter Node", _indentationIcon))
             {
-                userData = OperatorType.Filter, level = 2
+                userData = SerializedOperatorType.Filter, level = 2
             },
             new SearchTreeEntry(new GUIContent("SwitchS Node", _indentationIcon))
             {
-                userData = OperatorType.SwitchS, level = 2
+                userData = SerializedOperatorType.SwitchS, level = 2
             },
             new SearchTreeEntry(new GUIContent("SwitchC Node", _indentationIcon))
             {
-                userData = OperatorType.SwitchC, level = 2
+                userData = SerializedOperatorType.SwitchC, level = 2
             },
             new SearchTreeEntry(new GUIContent("Cell_Stream", _indentationIcon))
             {
-                userData = OperatorType.Cell_Stream, level = 2
+                userData = SerializedOperatorType.Cell_Stream, level = 2
             },
             new SearchTreeEntry(new GUIContent("Cell_Cell", _indentationIcon))
             {
-                userData = OperatorType.Cell_Cell, level = 2
+                userData = SerializedOperatorType.Cell_Cell, level = 2
             },
             new SearchTreeEntry(new GUIContent("Comment Block", _indentationIcon))
             {
@@ -87,11 +87,11 @@ public class NodeSearchWindow : ScriptableObject, ISearchWindowProvider
                 var rect = new Rect(localMousePosition, _graphView.DefaultCommentBlockSize);
                 _graphView.CreateCommentBlock(rect);
                 return true;
-            case OperatorType type:
+            case SerializedOperatorType type:
                 _graphView.AddElement(NodeFactory.CreateNode(new FrpNodeData
                 {
                     CodeText = "hogehoge",
-                    OperatorType = type,
+                    serializedOperatorType = type,
                     Position = localMousePosition,
                     Guid = Guid.NewGuid().ToString()
                 }));
