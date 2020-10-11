@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Tests\EventTypeTest.cs" />
+     <Compile Include="Assets\Tests\OperatorInfoTest.cs" />
      <None Include="Assets\Tests\Tests.asmdef" />
  <Reference Include="UnityEngine.TestRunner">
  <HintPath>C:/Users/kouichi/work/unity_work/FRP_Graph/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>

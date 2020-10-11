@@ -67,6 +67,7 @@
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\FrpNodeData.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\NodeLinkData.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\FrpGraphContainer.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\Operators\OperatorInfo.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\SerializedOperatorType.cs" />
      <None Include="Assets\FRPGraph\Runtime\FRPGraph_Runtime.asmdef" />
  <Reference Include="UnityEditor.UI">
