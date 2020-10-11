@@ -46,6 +46,15 @@ namespace FRPGraph.Runtime
             returnVal._list.RemoveLast();
             return returnVal;
         }
+        
+        public EventType Unwrap(EventTypePrimitive eventTypePrimitive)
+        {
+            if (OuterType != eventTypePrimitive)
+                return null;
+            var returnVal = Clone();
+            returnVal._list.RemoveLast();
+            return returnVal;
+        }
     }
 
     public enum EventTypePrimitive
