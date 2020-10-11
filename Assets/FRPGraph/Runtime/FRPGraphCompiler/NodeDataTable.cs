@@ -12,7 +12,7 @@ namespace FRPGraph.Runtime
             {
                 nodeDict[new Guid(nodeData.Guid)] = new NodeData
                 {
-                    OperatorType = nodeData.serializedOperatorType.ToString(),
+                    OperatorType = nodeData.OperatorInfo.OperatorName,
                     CodeText = nodeData.CodeText,
                     Return = null,
                     Arguments = new List<string>()

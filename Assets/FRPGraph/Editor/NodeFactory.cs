@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Boo.Lang.Runtime;
+using System.Reflection;
 using FRPGraph.Editor.Nodes;
-using NewFrpGraph;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -16,89 +15,17 @@ namespace FRPGraph.Editor
         
         public static FrpNode CreateNode(FrpNodeData frpNodeData)
         {
-            switch (frpNodeData.serializedOperatorType)
+            var inputPortList = new List<(Type portType, string portName)>();
+            foreach (var argumentName in frpNodeData.OperatorInfo.OperatorArgumentNames)
             {
-                case SerializedOperatorType.Map:
-                {
-                    var node = GeneratePorts(
-                        new List<(Type portType, string portName)>{(typeof(Stream), portName: "Sin")}, 
-                        new List<(Type portType, string portName)>{(typeof(Stream), "Sout")},
-                        frpNodeData);
-                    return node;
-                }
-                case SerializedOperatorType.Snapshot:
-                {
-                    var node = GeneratePorts(
-                        new List<(Type portType, string portName)>
-                        {
-                            (typeof(Stream), portName: "Sin"),
-                            (typeof(Cell), portName: "Cin")
-                        }, 
-                        new List<(Type portType, string portName)>{(typeof(Stream), "Sout")},
-                        frpNodeData);
-                    return node;
-                }
-                case SerializedOperatorType.Merge:
-                {
-                    var node = GeneratePorts(
-                        new List<(Type portType, string portName)>
-                        {
-                            (typeof(Stream), portName: "Sin0"),
-                            (typeof(Stream), portName: "Sin1")
-                        }, 
-                        new List<(Type portType, string portName)>{(typeof(Stream), "Sout")},
-                        frpNodeData);
-                    return node;
-                }
-                case SerializedOperatorType.Lift:
-                {
-                    var node = GeneratePorts(
-                        new List<(Type portType, string portName)>
-                        {
-                            (typeof(Cell), portName: "Cin0"),
-                            (typeof(Cell), portName: "Cin1")
-                        }, 
-                        new List<(Type portType, string portName)>{(typeof(Cell), "Cout")},
-                        frpNodeData);
-                    return node;
-                }
-                case SerializedOperatorType.Filter:
-                {
-                    var node = GeneratePorts(
-                        new List<(Type portType, string portName)>
-                        {
-                            (typeof(Stream), portName: "Sin")
-                        }, 
-                        new List<(Type portType, string portName)>{(typeof(Stream), "Sout")},
-                        frpNodeData);
-                    return node;
-                }
-                case SerializedOperatorType.SwitchS:
-                    return GeneratePorts(
-                        new List<(Type portType, string portName)>{(typeof(Cell<Stream>), portName: "Cell<Stream>0")}, 
-                        new List<(Type portType, string portName)>{(typeof(Stream), "Stream")},
-                        frpNodeData);
-                
-                case SerializedOperatorType.SwitchC:
-                    return GeneratePorts(
-                        new List<(Type portType, string portName)>{(typeof(Cell<Cell>), portName: "Cell<Cell>0")}, 
-                        new List<(Type portType, string portName)>{(typeof(Stream), "Stream")},
-                        frpNodeData);
-                
-                case SerializedOperatorType.Cell_Stream:
-                    return GeneratePorts(
-                        new List<(Type portType, string portName)>(), 
-                        new List<(Type portType, string portName)>{(typeof(Cell<Stream>), "Cell_Stream")},
-                        frpNodeData);
-                
-                case SerializedOperatorType.Cell_Cell:
-                    return GeneratePorts(
-                        new List<(Type portType, string portName)>(), 
-                        new List<(Type portType, string portName)>{(typeof(Cell<Cell>), "Cell_Cell")},
-                        frpNodeData);
-                
-                default: throw new RuntimeException($"No definition found for the operator {frpNodeData.serializedOperatorType}");
+                inputPortList.Add((null, argumentName));
             }
+
+            var node = GeneratePorts(
+                inputPortList, 
+                new List<(Type portType, string portName)>{(null, frpNodeData.OperatorInfo.OperatorReturnName)},
+                frpNodeData);
+            return node;
         }
 
         public static FrpNode GeneratePorts(IEnumerable<(Type portType, string portName)> inputPorts,
@@ -109,6 +36,25 @@ namespace FRPGraph.Editor
             foreach (var (inputPort, index) in inputPorts.Select((value, index) => (value, index)))
             {
                 var port = node.InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, inputPort.portType);
+                var addTextFieldToEdge = (Action<Port>) (p =>
+                {
+                    var text = new TextField("") {value = "New Connection"};
+                    p.connections
+                        .Select(edge => edge.edgeControl)
+                        .Where(control => control.Q<TextField>() == null)
+                        .ToList()
+                        .ForEach(control => control.Add(text));
+                });
+                var fieldInfo = typeof(Port).GetField("OnConnect", BindingFlags.NonPublic | BindingFlags.Instance);
+                var defaultOnConnect = (Action<Port>)fieldInfo.GetValue(port);
+                if (defaultOnConnect == null)
+                {
+                    fieldInfo.SetValue(port, addTextFieldToEdge);
+                }
+                else
+                {
+                    defaultOnConnect += addTextFieldToEdge;
+                }
                 port.portName = inputPort.portName;
                 node.inputContainer.Add(port);
             }
@@ -134,8 +80,8 @@ namespace FRPGraph.Editor
             
             node.SetPosition(new Rect(frpNodeData.Position, defaultNodeSize));
 
-            node.title = frpNodeData.serializedOperatorType.ToString();
-            node.AddToClassList(frpNodeData.serializedOperatorType.ToString().ToLower());
+            node.title = frpNodeData.OperatorInfo.OperatorName;
+            node.AddToClassList(frpNodeData.OperatorInfo.OperatorName.ToLower());
 
             return node;
         }

@@ -100,8 +100,7 @@ public class GraphSaveUtility
             
             //Load Connection Name
             {
-                var textField = new TextField("") {value = connections[j].ConnectionName};
-                edge.edgeControl.Add(textField);
+                edge.edgeControl.Q<TextField>().value = connections[j].ConnectionName;
             }
 
             targetNode.SetPosition(new Rect(

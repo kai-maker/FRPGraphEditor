@@ -1,5 +1,6 @@
 ﻿using System;
 using NewFrpGraph;
+using NewFrpGraph.Operators;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -12,7 +13,7 @@ namespace FRPGraph.Editor.Nodes
         public string Guid;
         public string CodeText;
         public Vector2 Position;
-        [FormerlySerializedAs("OperatorType")] public SerializedOperatorType serializedOperatorType;
+        public OperatorInfo OperatorInfo;
 
 
         public FrpNodeData Clone()
@@ -22,7 +23,7 @@ namespace FRPGraph.Editor.Nodes
                 Guid = string.Copy(Guid),
                 CodeText = string.Copy(CodeText),
                 Position = Position,
-                serializedOperatorType = serializedOperatorType
+                OperatorInfo = OperatorInfo
             };
         }
     }

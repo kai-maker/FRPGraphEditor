@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 public class FRPGraphEditorWindow : EditorWindow
 {
     private FRPGraphView _graphView;
-    private string _fileName = "New Narrative";
+    private string _fileName = "New FRP Graph";
     
     [MenuItem("Graph/FRP Graph")]
     public static void OpenFRPGraphEditorWindow()
