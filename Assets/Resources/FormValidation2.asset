@@ -1,0 +1,591 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97e84e64d9c6024c98f959834f525a8, type: 3}
+  m_Name: FormValidation2
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - ConnectionName: MailNumber
+    BaseNodeGuid: fc96c8b4-dd0b-4651-a9c4-f05aef4514f9
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 9f6adccb-b802-4c5a-a763-59142078f55e
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: MailNumber
+    BaseNodeGuid: fc96c8b4-dd0b-4651-a9c4-f05aef4514f9
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 0dae5fa1-973b-4ea3-bd6a-e44277f92b70
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: MailNumber
+    BaseNodeGuid: fc96c8b4-dd0b-4651-a9c4-f05aef4514f9
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: e56588ba-b844-4e1a-b07b-cb3166734d90
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: MailNumber
+    BaseNodeGuid: fc96c8b4-dd0b-4651-a9c4-f05aef4514f9
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: e141fe60-773b-4428-b672-7b364fa71d60
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: MailNumber
+    BaseNodeGuid: fc96c8b4-dd0b-4651-a9c4-f05aef4514f9
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 1a53022b-fbf3-4a17-8b58-e66a8e6595f3
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: Enabled1
+    BaseNodeGuid: 0dae5fa1-973b-4ea3-bd6a-e44277f92b70
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 03c1a8c4-b8c6-431f-9bf0-d645fd65d1a8
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: Enabled2
+    BaseNodeGuid: e56588ba-b844-4e1a-b07b-cb3166734d90
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: dccf31c8-6ea6-4dc0-b5c0-fd8dcb410b05
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: Enabled3
+    BaseNodeGuid: e141fe60-773b-4428-b672-7b364fa71d60
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 49be19a8-7da3-4db8-8bd8-d941bb48623e
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: Enabled4
+    BaseNodeGuid: 1a53022b-fbf3-4a17-8b58-e66a8e6595f3
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 2723b013-068e-4c4f-a73e-3acb5d062740
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: MailNumber
+    BaseNodeGuid: fc96c8b4-dd0b-4651-a9c4-f05aef4514f9
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 51b3dcdb-287e-4cbd-ba82-0bfc48dc9d69
+    TargetPortName: Behavior1
+    TargetPortNum: 0
+  - ConnectionName: MailNumber
+    BaseNodeGuid: fc96c8b4-dd0b-4651-a9c4-f05aef4514f9
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 5db542bf-48ac-4cb6-bf4c-7f48e4120a0d
+    TargetPortName: Behavior1
+    TargetPortNum: 0
+  - ConnectionName: MailNumber
+    BaseNodeGuid: fc96c8b4-dd0b-4651-a9c4-f05aef4514f9
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 6a790fc5-11bb-423a-8aa1-1b97490db0ae
+    TargetPortName: Behavior1
+    TargetPortNum: 0
+  - ConnectionName: MailNumber
+    BaseNodeGuid: fc96c8b4-dd0b-4651-a9c4-f05aef4514f9
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 3656cf0c-c5cb-42ea-897e-eadfda864497
+    TargetPortName: Behavior1
+    TargetPortNum: 0
+  - ConnectionName: FormName
+    BaseNodeGuid: 2cdb7f4a-1b6d-4b8f-9e59-52d0b08f300f
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: aa746f20-6a40-44cb-b4f4-68d8b3c4a2e6
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: Str1
+    BaseNodeGuid: aa746f20-6a40-44cb-b4f4-68d8b3c4a2e6
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 5fa733d2-2a79-45a5-9870-09d268dd9ba1
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: Str2
+    BaseNodeGuid: 9f6adccb-b802-4c5a-a763-59142078f55e
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: dbda54bd-ef66-471b-a55c-9fc2a8902213
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: Str3
+    BaseNodeGuid: 51b3dcdb-287e-4cbd-ba82-0bfc48dc9d69
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: fca9c64a-8628-42bb-95f4-bb484e210385
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: Str4
+    BaseNodeGuid: 5db542bf-48ac-4cb6-bf4c-7f48e4120a0d
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 0c4cd63f-da37-4310-a30e-d088ce3f61fd
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: Str5
+    BaseNodeGuid: 6a790fc5-11bb-423a-8aa1-1b97490db0ae
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 2cfc4338-d2fa-4fd4-8e25-2a73b5e7cc72
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: Str5
+    BaseNodeGuid: 3656cf0c-c5cb-42ea-897e-eadfda864497
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 1b21f373-d1cb-43f6-a53a-1df431ba53ef
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: IsValid6
+    BaseNodeGuid: 1b21f373-d1cb-43f6-a53a-1df431ba53ef
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 2c5fd80b-68d6-4785-bbd5-0a484f05c668
+    TargetPortName: Behavior2
+    TargetPortNum: 1
+  - ConnectionName: IsValid5
+    BaseNodeGuid: 2cfc4338-d2fa-4fd4-8e25-2a73b5e7cc72
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 08ba4611-7fec-4fb4-b956-95d3b529c593
+    TargetPortName: Behavior2
+    TargetPortNum: 1
+  - ConnectionName: IsValid4
+    BaseNodeGuid: 0c4cd63f-da37-4310-a30e-d088ce3f61fd
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 10bd69c9-034b-4c1d-b123-30f1b279f9b3
+    TargetPortName: Behavior2
+    TargetPortNum: 1
+  - ConnectionName: IsValid3
+    BaseNodeGuid: fca9c64a-8628-42bb-95f4-bb484e210385
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: d2e32865-50f6-4ac0-939e-8c2faec271aa
+    TargetPortName: Behavior2
+    TargetPortNum: 1
+  - ConnectionName: AllValid
+    BaseNodeGuid: 2c5fd80b-68d6-4785-bbd5-0a484f05c668
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: b70e26ed-7b40-4f24-a9a2-84fbb2eeef5b
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  - ConnectionName: temp4
+    BaseNodeGuid: 08ba4611-7fec-4fb4-b956-95d3b529c593
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 2c5fd80b-68d6-4785-bbd5-0a484f05c668
+    TargetPortName: Behavior1
+    TargetPortNum: 0
+  - ConnectionName: temp3
+    BaseNodeGuid: 10bd69c9-034b-4c1d-b123-30f1b279f9b3
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 08ba4611-7fec-4fb4-b956-95d3b529c593
+    TargetPortName: Behavior1
+    TargetPortNum: 0
+  - ConnectionName: temp2
+    BaseNodeGuid: d2e32865-50f6-4ac0-939e-8c2faec271aa
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 10bd69c9-034b-4c1d-b123-30f1b279f9b3
+    TargetPortName: Behavior1
+    TargetPortNum: 0
+  - ConnectionName: IsValid2
+    BaseNodeGuid: dbda54bd-ef66-471b-a55c-9fc2a8902213
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 6df911bd-18c7-4306-8243-9d8fca4259fd
+    TargetPortName: Behavior2
+    TargetPortNum: 1
+  - ConnectionName: IsValid1
+    BaseNodeGuid: 5fa733d2-2a79-45a5-9870-09d268dd9ba1
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 6df911bd-18c7-4306-8243-9d8fca4259fd
+    TargetPortName: Behavior1
+    TargetPortNum: 0
+  - ConnectionName: temp1
+    BaseNodeGuid: 6df911bd-18c7-4306-8243-9d8fca4259fd
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: d2e32865-50f6-4ac0-939e-8c2faec271aa
+    TargetPortName: Behavior1
+    TargetPortNum: 0
+  - ConnectionName: Email1
+    BaseNodeGuid: aaf353c4-7d2a-459c-bc1e-e8df90049355
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 51b3dcdb-287e-4cbd-ba82-0bfc48dc9d69
+    TargetPortName: Behavior2
+    TargetPortNum: 1
+  - ConnectionName: Email2
+    BaseNodeGuid: d9ab9b43-4616-43b8-811f-f34073b91ed6
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 5db542bf-48ac-4cb6-bf4c-7f48e4120a0d
+    TargetPortName: Behavior2
+    TargetPortNum: 1
+  - ConnectionName: Email3
+    BaseNodeGuid: e252913d-c3b3-41bc-a126-feb34ed691bc
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 6a790fc5-11bb-423a-8aa1-1b97490db0ae
+    TargetPortName: Behavior2
+    TargetPortNum: 1
+  - ConnectionName: Email4
+    BaseNodeGuid: 13545100-6042-4974-ba1d-c33d8b272e2f
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 3656cf0c-c5cb-42ea-897e-eadfda864497
+    TargetPortName: Behavior2
+    TargetPortNum: 1
+  FrpNodeData:
+  - Guid: 0dae5fa1-973b-4ea3-bd6a-e44277f92b70
+    CodeText: n => n > 0
+    Position: {x: 585, y: 396}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: e141fe60-773b-4428-b672-7b364fa71d60
+    CodeText: n => n > 2
+    Position: {x: 586, y: 821}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: 1a53022b-fbf3-4a17-8b58-e66a8e6595f3
+    CodeText: n => n > 3
+    Position: {x: 584, y: 1036}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: e56588ba-b844-4e1a-b07b-cb3166734d90
+    CodeText: n => n > 1
+    Position: {x: 592, y: 611}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: fc96c8b4-dd0b-4651-a9c4-f05aef4514f9
+    CodeText: 3
+    Position: {x: 333, y: 273}
+    OperatorInfo:
+      OperatorName: ConstantB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames: []
+  - Guid: 13545100-6042-4974-ba1d-c33d8b272e2f
+    CodeText: Write code here
+    Position: {x: 298, y: 1628}
+    OperatorInfo:
+      OperatorName: ConstantB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames: []
+  - Guid: e252913d-c3b3-41bc-a126-feb34ed691bc
+    CodeText: Write code here
+    Position: {x: 299, y: 1493}
+    OperatorInfo:
+      OperatorName: ConstantB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames: []
+  - Guid: d9ab9b43-4616-43b8-811f-f34073b91ed6
+    CodeText: Write code here
+    Position: {x: 291, y: 1363}
+    OperatorInfo:
+      OperatorName: ConstantB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames: []
+  - Guid: aaf353c4-7d2a-459c-bc1e-e8df90049355
+    CodeText: Write code here
+    Position: {x: 293, y: 1199}
+    OperatorInfo:
+      OperatorName: ConstantB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames: []
+  - Guid: 5db542bf-48ac-4cb6-bf4c-7f48e4120a0d
+    CodeText: '(e, n) => n > 0
+
+      ?  ""
+
+      : e.equals("")
+
+      ? "Enter
+      something"
+
+      : e.indexOf(''@'') < 0
+
+      ? "Must contain @"
+
+      :
+      ""'
+    Position: {x: 806, y: 1370}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior1
+      - Behavior2
+  - Guid: 6a790fc5-11bb-423a-8aa1-1b97490db0ae
+    CodeText: '(e, n) => n > 0
+
+      ?  ""
+
+      : e.equals("")
+
+      ? "Enter
+      something"
+
+      : e.indexOf(''@'') < 0
+
+      ? "Must contain @"
+
+      :
+      ""'
+    Position: {x: 998, y: 1515}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior1
+      - Behavior2
+  - Guid: 2723b013-068e-4c4f-a73e-3acb5d062740
+    CodeText: Write code here
+    Position: {x: 861, y: 1107}
+    OperatorInfo:
+      OperatorName: EndB
+      OperatorReturnName: null
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: 49be19a8-7da3-4db8-8bd8-d941bb48623e
+    CodeText: Write code here
+    Position: {x: 857, y: 884}
+    OperatorInfo:
+      OperatorName: EndB
+      OperatorReturnName: null
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: dccf31c8-6ea6-4dc0-b5c0-fd8dcb410b05
+    CodeText: Write code here
+    Position: {x: 851, y: 679}
+    OperatorInfo:
+      OperatorName: EndB
+      OperatorReturnName: null
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: 03c1a8c4-b8c6-431f-9bf0-d645fd65d1a8
+    CodeText: Write code here
+    Position: {x: 852, y: 456}
+    OperatorInfo:
+      OperatorName: EndB
+      OperatorReturnName: null
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: 9f6adccb-b802-4c5a-a763-59142078f55e
+    CodeText: 'n => (n < 1 || n > 4)
+
+      ? "Must be 1 to 4"
+
+      : ""'
+    Position: {x: 578, y: 208}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: aa746f20-6a40-44cb-b4f4-68d8b3c4a2e6
+    CodeText: 's => s==""
+
+      ? "Enter something"
+
+      : s.indexOf('' '')==
+      0
+
+      ? "Must contain space"
+
+      : ""'
+    Position: {x: 581, y: 33}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: 2cdb7f4a-1b6d-4b8f-9e59-52d0b08f300f
+    CodeText: '"MyForm"'
+    Position: {x: 350, y: 43}
+    OperatorInfo:
+      OperatorName: ConstantB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames: []
+  - Guid: 5fa733d2-2a79-45a5-9870-09d268dd9ba1
+    CodeText: s => s==""
+    Position: {x: 1039, y: 38}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: dbda54bd-ef66-471b-a55c-9fc2a8902213
+    CodeText: s => s==""
+    Position: {x: 1036, y: 210}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: 2cfc4338-d2fa-4fd4-8e25-2a73b5e7cc72
+    CodeText: s => s==""
+    Position: {x: 1295, y: 1524}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: 0c4cd63f-da37-4310-a30e-d088ce3f61fd
+    CodeText: s => s==""
+    Position: {x: 1297, y: 1382}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: fca9c64a-8628-42bb-95f4-bb484e210385
+    CodeText: s => s==""
+    Position: {x: 1290, y: 1243}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: 3656cf0c-c5cb-42ea-897e-eadfda864497
+    CodeText: '(e, n) => n > 0
+
+      ?  ""
+
+      : e.equals("")
+
+      ? "Enter
+      something"
+
+      : e.indexOf(''@'') < 0
+
+      ? "Must contain @"
+
+      :
+      ""'
+    Position: {x: 1215, y: 1677}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior1
+      - Behavior2
+  - Guid: 1b21f373-d1cb-43f6-a53a-1df431ba53ef
+    CodeText: s => s==""
+    Position: {x: 1486, y: 1673}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: d2e32865-50f6-4ac0-939e-8c2faec271aa
+    CodeText: (a, b) => a&&b
+    Position: {x: 1791, y: 896}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior1
+      - Behavior2
+  - Guid: 10bd69c9-034b-4c1d-b123-30f1b279f9b3
+    CodeText: (a, b) => a&&b
+    Position: {x: 2048, y: 983}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior1
+      - Behavior2
+  - Guid: 08ba4611-7fec-4fb4-b956-95d3b529c593
+    CodeText: (a, b) => a&&b
+    Position: {x: 2311, y: 1076}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior1
+      - Behavior2
+  - Guid: 2c5fd80b-68d6-4785-bbd5-0a484f05c668
+    CodeText: (a, b) => a&&b
+    Position: {x: 2598, y: 1178}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior1
+      - Behavior2
+  - Guid: b70e26ed-7b40-4f24-a9a2-84fbb2eeef5b
+    CodeText: Write code here
+    Position: {x: 2883, y: 1279}
+    OperatorInfo:
+      OperatorName: EndB
+      OperatorReturnName: null
+      OperatorArgumentNames:
+      - Behavior
+  - Guid: 6df911bd-18c7-4306-8243-9d8fca4259fd
+    CodeText: (a, b) => a&&b
+    Position: {x: 1514, y: 813}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior1
+      - Behavior2
+  - Guid: 51b3dcdb-287e-4cbd-ba82-0bfc48dc9d69
+    CodeText: '(e, n) => n > 0
+
+      ?  ""
+
+      : e.equals("")
+
+      ? "Enter
+      something"
+
+      : e.indexOf(''@'') < 0
+
+      ? "Must contain @"
+
+      :
+      ""'
+    Position: {x: 621, y: 1228}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior1
+      - Behavior2
+  ExposedProperties: []
+  CommentBlockData: []
