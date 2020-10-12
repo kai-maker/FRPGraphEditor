@@ -22,6 +22,7 @@ namespace FRPGraph.Runtime
 
         public void Print()
         {
+            StringBuilder result = new StringBuilder();
             foreach (var guid in order)
             {
                 var node = table[guid];
@@ -39,8 +40,10 @@ namespace FRPGraph.Runtime
                 stringBuilder.Append(") {");
                 stringBuilder.Append($"{node.CodeText}");
                 stringBuilder.Append("}");
-                Debug.Log(stringBuilder.ToString());
+                stringBuilder.Append("\n");
+                result.Append(stringBuilder);
             }
+            Debug.Log(result.ToString());
         }
     }
 }

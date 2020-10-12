@@ -9,7 +9,6 @@ namespace FRPGraph.Editor.Nodes
     [Serializable]
     public class FrpNodeData
     {
-        [SerializeField]
         public string Guid;
         public string CodeText;
         public Vector2 Position;
