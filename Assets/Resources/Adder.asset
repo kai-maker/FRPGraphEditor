@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97e84e64d9c6024c98f959834f525a8, type: 3}
+  m_Name: Adder
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - ConnectionName: a
+    BaseNodeGuid: e29da0a2-137c-4123-b13f-5bc5e4ea886f
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 2d9e8aa9-443c-48e6-82b4-2841b1b3fb7b
+    TargetPortName: Behavior1
+    TargetPortNum: 0
+  - ConnectionName: b
+    BaseNodeGuid: e72299ec-b30a-483a-ab63-c5f820773e6a
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 2d9e8aa9-443c-48e6-82b4-2841b1b3fb7b
+    TargetPortName: Behavior2
+    TargetPortNum: 1
+  - ConnectionName: c
+    BaseNodeGuid: 2d9e8aa9-443c-48e6-82b4-2841b1b3fb7b
+    BasePortName: Behavior
+    BasePortNum: 0
+    TargetNodeGuid: 61cc064b-1099-40b5-b722-af267671be66
+    TargetPortName: Behavior
+    TargetPortNum: 0
+  FrpNodeData:
+  - Guid: e29da0a2-137c-4123-b13f-5bc5e4ea886f
+    CodeText: A
+    Position: {x: 178, y: 101}
+    OperatorInfo:
+      OperatorName: DomInputB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames: []
+  - Guid: e72299ec-b30a-483a-ab63-c5f820773e6a
+    CodeText: B
+    Position: {x: 166, y: 227}
+    OperatorInfo:
+      OperatorName: DomInputB
+      OperatorReturnName: Behavior
+      OperatorArgumentNames: []
+  - Guid: 2d9e8aa9-443c-48e6-82b4-2841b1b3fb7b
+    CodeText: (a, b) => Number(a) + Number(b)
+    Position: {x: 427, y: 144}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: Behavior
+      OperatorArgumentNames:
+      - Behavior1
+      - Behavior2
+  - Guid: 61cc064b-1099-40b5-b722-af267671be66
+    CodeText: C
+    Position: {x: 749, y: 179}
+    OperatorInfo:
+      OperatorName: DomOutputB
+      OperatorReturnName: null
+      OperatorArgumentNames:
+      - Behavior
+  ExposedProperties: []
+  CommentBlockData: []
