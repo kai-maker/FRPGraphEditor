@@ -1,6 +1,8 @@
 # FRPGraphEditor
-Visual programming editor for functional reactive programming(FRP)
+関数型リアクティブプログラミング(FRP) のエディタ
 
-### Create FRP logic as graph and compile to Javascript
+### 概要
+関数型リアクティブプログラミングのロジックをノードベースでプログラミングし、Javascriptのコードにコンパイル出来ます
 
-![Preview1](https://github.com/kai-maker/FRPGraphEditor/blob/master/Readme/ZAeGwEvtN3.gif)
+### 動画
+[![FRP Editor demo](http://img.youtube.com/vi/kGki4lQOkug/0.jpg)](http://www.youtube.com/watch?v=kGki4lQOkug "FRP Editor demo")
