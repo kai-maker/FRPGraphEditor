@@ -8,9 +8,13 @@
 
 ## 足し算するアプリケーション
 
-ロジックの作成とコンパイルのデモ動画
+2つの入力の数字から合計を出力するシンプルなアプリケーションです
 
-[![FrpAdder](http://img.youtube.com/vi/VjBoq8ko6Z0/0.jpg)](http://www.youtube.com/watch?v=VjBoq8ko6Z0 "FrpAdder")
+![FrpAdderPreview](https://github.com/kai-maker/FRPGraphEditor/blob/master/Readme/chrome_aLi7rfYg8q.png)
+
+足し算するFRPロジックを作成しコンパイルするデモ動画
+
+[![FrpAdderMovie](http://img.youtube.com/vi/VjBoq8ko6Z0/0.jpg)](http://www.youtube.com/watch?v=VjBoq8ko6Z0 "FrpAdder")
 
 デモアプリケーションのリポジトリ
 
@@ -18,6 +22,10 @@ https://github.com/kai-maker/Flapjax-Adder
 
 
 ## 入力フォームを検証するアプリケーション
+
+名前と複数のメールアドレスの入力を検証するアプリケーションです
+
+![FrpFormValidationPreview](https://github.com/kai-maker/FRPGraphEditor/blob/master/Readme/chrome_aNrMdKw0bK.png)
 
 ロジックのコンパイルのデモ動画
 
