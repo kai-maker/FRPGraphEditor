@@ -64,7 +64,6 @@
      <Compile Include="Assets\FRPGraph\Editor\NodeFactory.cs" />
      <Compile Include="Assets\FRPGraph\Editor\NodeSearchWindow.cs" />
      <Compile Include="Assets\FRPGraph\Editor\Nodes\FrpNode.cs" />
-     <Compile Include="Assets\FRPGraph\Editor\Nodes\PortType.cs" />
      <Compile Include="Assets\uREPL\Scripts\Editor\MainEditor.cs" />
      <None Include="Assets\FRPGraph\Editor\Resources\FRPGraph.uss" />
      <None Include="Assets\FRPGraph\Editor\Resources\Node.uss" />

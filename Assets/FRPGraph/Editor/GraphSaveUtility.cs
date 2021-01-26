@@ -72,8 +72,8 @@ public class GraphSaveUtility
         ClearGraph();
         CreateNodes();
         ConnectNodes();
-        CreateExposedProperties();
-        GenerateCommentBlocks();
+        //CreateExposedProperties();
+        //GenerateCommentBlocks();
     }
 
     private void CreateExposedProperties()

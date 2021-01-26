@@ -32,5 +32,9 @@ namespace NewFrpGraph.Operators
         public static OperatorInfo SwitchB = new OperatorInfo("SwitchB", "Behavior", "Behavior<Behavior>");
         public static OperatorInfo EndE = new OperatorInfo("EndE", "null", "Event");
         public static OperatorInfo EndB = new OperatorInfo("EndB" ,"null", "Behavior");
+        public static OperatorInfo DomInputB = new OperatorInfo("DomInputB", "Behavior");
+        public static OperatorInfo DomOutputB = new OperatorInfo("DomOutputB", "null", "Behavior");
+        public static OperatorInfo DomEnableB = new OperatorInfo("DomEnableB", "null", "Behavior");
+        public static OperatorInfo DebugB = new OperatorInfo("DebugB", "null", "Behavior");
     }
 }

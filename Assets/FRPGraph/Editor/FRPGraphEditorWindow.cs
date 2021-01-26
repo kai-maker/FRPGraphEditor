@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using FRPGraph.Runtime;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
@@ -9,7 +10,7 @@ public class FRPGraphEditorWindow : EditorWindow
 {
     private FRPGraphView _graphView;
     private string _fileName = "New FRP Graph";
-    
+
     [MenuItem("Graph/FRP Graph")]
     public static void OpenFRPGraphEditorWindow()
     {
@@ -21,15 +22,15 @@ public class FRPGraphEditorWindow : EditorWindow
     {
         ConstructGraphView();
         GenerateToolbar();
-        GenerateMiniMap();
-        GenerateBlackBoard();
+        //GenerateMiniMap();
+        //GenerateBlackBoard();
     }
 
     private void GenerateBlackBoard()
     {
         var blackboard = new Blackboard(_graphView);
-        blackboard.Add(new BlackboardSection{title = "Exposed Properties"});
-        blackboard.addItemRequested = _blackbord => { _graphView.AddPropertyToBlackBoard(new ExposedProperty());};
+        blackboard.Add(new BlackboardSection {title = "Exposed Properties"});
+        blackboard.addItemRequested = _blackbord => { _graphView.AddPropertyToBlackBoard(new ExposedProperty()); };
         blackboard.editTextRequested = (blackboard1, element, newValue) =>
         {
             var oldPropertyName = ((BlackboardField) element).text;
@@ -44,8 +45,8 @@ public class FRPGraphEditorWindow : EditorWindow
             _graphView.ExposedProperties[propertyIndex].PropertyName = newValue;
             ((BlackboardField) element).text = newValue;
         };
-        
-        blackboard.SetPosition(new Rect(10,30, 200, 300));
+
+        blackboard.SetPosition(new Rect(10, 30, 200, 300));
         _graphView.Add(blackboard);
         _graphView.Blackboard = blackboard;
     }
@@ -61,7 +62,7 @@ public class FRPGraphEditorWindow : EditorWindow
         {
             name = "FRP Graph"
         };
-        
+
         _graphView.StretchToParentSize();
         rootVisualElement.Add(_graphView);
     }
@@ -69,19 +70,20 @@ public class FRPGraphEditorWindow : EditorWindow
     private void GenerateToolbar()
     {
         var toolbar = new Toolbar();
-        
+
         var fileNameTextField = new TextField("File name:");
         fileNameTextField.SetValueWithoutNotify(_fileName);
         fileNameTextField.MarkDirtyRepaint();
         fileNameTextField.RegisterValueChangedCallback(evt => _fileName = evt.newValue);
         toolbar.Add(fileNameTextField);
-        
-        toolbar.Add(new Button(() => RequestDataOperation(true)){text = "Save Data"});
-        toolbar.Add(new Button(() => RequestDataOperation(false)){text = "Load Data"});
+
+        toolbar.Add(new Button(() => RequestDataOperation(true)) {text = "Save Data"});
+        toolbar.Add(new Button(() => RequestDataOperation(false)) {text = "Load Data"});
+        toolbar.Add(new Button(() => CompileOperation()) {text = "Compile to JS"});
         
         toolbar.styleSheets.Add(Resources.Load<StyleSheet>("ToolBar"));
 
-        
+
         rootVisualElement.Add(toolbar);
     }
 
@@ -104,9 +106,16 @@ public class FRPGraphEditorWindow : EditorWindow
         }
 
         var saveUtility = GraphSaveUtility.GetInstance(_graphView);
-        if(save)
+        if (save)
             saveUtility.SaveGraph(_fileName);
         else
             saveUtility.LoadGraph(_fileName);
+    }
+
+    private void CompileOperation()
+    {
+        var data = Resources.Load<FrpGraphContainer>(_fileName);
+        var ir = IntermediateRepresentation.Create(data);
+        FrapjaxCompiler.Print(ir);
     }
 }

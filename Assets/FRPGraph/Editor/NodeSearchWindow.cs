@@ -56,15 +56,6 @@ public class NodeSearchWindow : ScriptableObject, ISearchWindowProvider
                 var rect = new Rect(localMousePosition, _graphView.DefaultCommentBlockSize);
                 _graphView.CreateCommentBlock(rect);
                 return true;
-            case SerializedOperatorType type:
-                _graphView.AddElement(NodeFactory.CreateNode(new FrpNodeData
-                {
-                    CodeText = "hogehoge",
-                    // = type,
-                    Position = localMousePosition,
-                    Guid = Guid.NewGuid().ToString()
-                }));
-                return true;
             case OperatorInfo info:
                 _graphView.AddElement(NodeFactory.CreateNode(new FrpNodeData
                 {

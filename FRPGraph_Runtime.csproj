@@ -60,15 +60,16 @@
   <ItemGroup>
      <Compile Include="Assets\FRPGraph\Runtime\Events\EventType.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\DependencyGraph.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\FrapjaxCompiler.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\IntermediateRepresentation.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\NodeDataTable.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\SodiumCompiler.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\CommentBlockData.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\ExposedProperty.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\FrpNodeData.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\NodeLinkData.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\FrpGraphContainer.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\Operators\OperatorInfo.cs" />
-     <Compile Include="Assets\FRPGraph\Runtime\SerializedOperatorType.cs" />
      <None Include="Assets\FRPGraph\Runtime\FRPGraph_Runtime.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/kouichi/work/unity_work/FRP_Graph/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

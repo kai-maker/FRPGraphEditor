@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f97e84e64d9c6024c98f959834f525a8, type: 3}
-  m_Name: New FRP Graph
+  m_Name: DomOutput
   m_EditorClassIdentifier: 
   NodeLinks:
-  - ConnectionName: New Connection
-    BaseNodeGuid: 474c4cc2-87fd-4bb9-9557-d4490ed812a5
-    BasePortName: Event
+  - ConnectionName: name
+    BaseNodeGuid: 68cab780-f21e-46d8-aab1-c7dd3e726ff4
+    BasePortName: Behavior
     BasePortNum: 0
-    TargetNodeGuid: 404c1b43-551d-477f-837e-10005612eeff
-    TargetPortName: Event
+    TargetNodeGuid: ad3bf1fd-a41c-437c-b083-e0c4e0b04cbe
+    TargetPortName: Behavior
     TargetPortNum: 0
   FrpNodeData:
-  - Guid: 474c4cc2-87fd-4bb9-9557-d4490ed812a5
-    CodeText: Write code here
-    Position: {x: 355, y: 127}
+  - Guid: 68cab780-f21e-46d8-aab1-c7dd3e726ff4
+    CodeText: name
+    Position: {x: 541, y: 198}
     OperatorInfo:
-      OperatorName: OneE
-      OperatorReturnName: Event
+      OperatorName: DomInputB
+      OperatorReturnName: Behavior
       OperatorArgumentNames: []
-  - Guid: 404c1b43-551d-477f-837e-10005612eeff
-    CodeText: Write code here
-    Position: {x: 559, y: 200}
+  - Guid: ad3bf1fd-a41c-437c-b083-e0c4e0b04cbe
+    CodeText: name
+    Position: {x: 802, y: 202}
     OperatorInfo:
-      OperatorName: MapE
-      OperatorReturnName: Event
+      OperatorName: DomOutputB
+      OperatorReturnName: null
       OperatorArgumentNames:
-      - Event
+      - Behavior
   ExposedProperties: []
   CommentBlockData: []

@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f97e84e64d9c6024c98f959834f525a8, type: 3}
-  m_Name: New FRP Graph
+  m_Name: New FRP Graph2
   m_EditorClassIdentifier: 
   NodeLinks:
   - ConnectionName: New Connection
-    BaseNodeGuid: 474c4cc2-87fd-4bb9-9557-d4490ed812a5
+    BaseNodeGuid: 7ec90624-68db-4734-80d0-fb215583401e
     BasePortName: Event
     BasePortNum: 0
-    TargetNodeGuid: 404c1b43-551d-477f-837e-10005612eeff
+    TargetNodeGuid: 3ff5cba4-69e3-4283-a927-e73f245f9abf
     TargetPortName: Event
     TargetPortNum: 0
   FrpNodeData:
-  - Guid: 474c4cc2-87fd-4bb9-9557-d4490ed812a5
+  - Guid: 7ec90624-68db-4734-80d0-fb215583401e
     CodeText: Write code here
-    Position: {x: 355, y: 127}
+    Position: {x: 326, y: 138}
     OperatorInfo:
       OperatorName: OneE
       OperatorReturnName: Event
       OperatorArgumentNames: []
-  - Guid: 404c1b43-551d-477f-837e-10005612eeff
+  - Guid: 3ff5cba4-69e3-4283-a927-e73f245f9abf
     CodeText: Write code here
-    Position: {x: 559, y: 200}
+    Position: {x: 586, y: 252}
     OperatorInfo:
       OperatorName: MapE
       OperatorReturnName: Event

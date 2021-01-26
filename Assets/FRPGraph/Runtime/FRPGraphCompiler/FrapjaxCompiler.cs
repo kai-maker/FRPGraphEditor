@@ -1,25 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FRPGraph.Editor.Nodes;
+﻿using System.Text;
 using UnityEngine;
 
 namespace FRPGraph.Runtime
 {
-    public class IntermediateRepresentation
+    public static class FrapjaxCompiler
     {
-        public List<Guid> order;
-        public Dictionary<Guid, NodeDataTable.NodeData> table;
-        
-        public static IntermediateRepresentation Create(FrpGraphContainer graphContainer)
-        {
-            var depGraph = DependencyGraph.Create(graphContainer);
-            var order = depGraph.TopologicalSort();
-            var table = NodeDataTable.Create(graphContainer);
-
-            return new IntermediateRepresentation{order = order, table = table};
-        }
-
         private static string ConvertOperatorName(string input)
         {
             switch (input)
@@ -30,13 +15,14 @@ namespace FRPGraph.Runtime
                 default: return input.ToLower().Remove(input.Length - 1) + "B";
             }
         }
-
-        public void Print()
+        
+        public static string Compile(IntermediateRepresentation imr)
         {
             StringBuilder result = new StringBuilder();
-            foreach (var guid in order)
+            result.Append("export default function generated() {\n");
+            foreach (var guid in imr.order)
             {
-                var node = table[guid];
+                var node = imr.table[guid];
                 // ignore ConstantB and EndB
                 if(node.OperatorType == "ConstantB" || node.OperatorType == "EndB") continue;
                 if (node.OperatorType == "DomInputB")
@@ -88,7 +74,14 @@ namespace FRPGraph.Runtime
                     result.Append(stringBuilder);
                 }
             }
-            Debug.Log(result.ToString());
+            result.Append("}\n");
+            return result.ToString();
+        }
+
+        static public void Print(IntermediateRepresentation imr)
+        {
+            var res = Compile(imr);
+            Debug.Log(res);
         }
     }
 }
