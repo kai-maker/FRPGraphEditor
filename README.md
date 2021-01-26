@@ -12,11 +12,11 @@
 
 ![FrpAdderPreview](https://github.com/kai-maker/FRPGraphEditor/blob/master/Readme/chrome_aLi7rfYg8q.png)
 
-足し算するFRPロジックを作成しコンパイルするデモ動画
+**足し算するFRPロジックを作成しコンパイルするデモ動画**
 
 [![FrpAdderMovie](http://img.youtube.com/vi/VjBoq8ko6Z0/0.jpg)](http://www.youtube.com/watch?v=VjBoq8ko6Z0 "FrpAdder")
 
-デモアプリケーションのリポジトリ
+**足し算するデモアプリケーションのリポジトリ**
 
 https://github.com/kai-maker/Flapjax-Adder
 
@@ -27,10 +27,10 @@ https://github.com/kai-maker/Flapjax-Adder
 
 ![FrpFormValidationPreview](https://github.com/kai-maker/FRPGraphEditor/blob/master/Readme/chrome_aNrMdKw0bK.png)
 
-ロジックのコンパイルのデモ動画
+**入力フォーム検証のFRPロジックをコンパイルするデモ動画**
 
 [![FRP Editor demo](http://img.youtube.com/vi/kGki4lQOkug/0.jpg)](http://www.youtube.com/watch?v=kGki4lQOkug "FRP Editor demo")
 
-デモアプリケーションのリポジトリ
+**入力フォームを検証するデモアプリケーションのリポジトリ**
 
 https://github.com/kai-maker/Flapjax-form-validation/tree/master
