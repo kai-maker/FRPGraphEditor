@@ -54,6 +54,34 @@ namespace FRPGraph.Runtime
                     stringBuilder.Append("\n");
                     result.Append(stringBuilder);
                 }
+                else if (node.OperatorType == "InputB")
+                {
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.Append($"//InputB [{node.Return}]");
+                    stringBuilder.Append("\n");
+                    result.Append(stringBuilder);
+                }
+                else if (node.OperatorType == "LabelB")
+                {
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.Append($"final var {node.CodeText} = new SLabel({node.Arguments[0]});");
+                    stringBuilder.Append("\n");
+                    result.Append(stringBuilder);
+                }
+                else if (node.OperatorType == "FieldB")
+                {
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.AppendLine($"final var {node.CodeText} = new STextField(\"\", 30);");
+                    stringBuilder.AppendLine($"final var {node.Return} = {node.CodeText}.text;");
+                    result.Append(stringBuilder);
+                }
+                else if (node.OperatorType == "DisableableFieldB")
+                {
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.AppendLine($"final var {node.CodeText} = new STextField(\"\", 30, {node.Arguments[0]});");
+                    stringBuilder.AppendLine($"final var {node.Return} = {node.CodeText}.text;");
+                    result.Append(stringBuilder);
+                }
                 else
                 {
                     StringBuilder stringBuilder = new StringBuilder();

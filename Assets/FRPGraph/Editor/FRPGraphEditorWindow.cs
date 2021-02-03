@@ -79,7 +79,8 @@ public class FRPGraphEditorWindow : EditorWindow
 
         toolbar.Add(new Button(() => RequestDataOperation(true)) {text = "Save Data"});
         toolbar.Add(new Button(() => RequestDataOperation(false)) {text = "Load Data"});
-        toolbar.Add(new Button(() => CompileOperation()) {text = "Compile to JS"});
+        toolbar.Add(new Button(() => CompileOperation(CompileType.FlapJax)) {text = "Compile to JS"});
+        toolbar.Add(new Button(() => CompileOperation(CompileType.Sodium)) {text = "Compile to Java"});
         
         toolbar.styleSheets.Add(Resources.Load<StyleSheet>("ToolBar"));
 
@@ -111,11 +112,28 @@ public class FRPGraphEditorWindow : EditorWindow
         else
             saveUtility.LoadGraph(_fileName);
     }
+    
+    private enum CompileType
+    {
+        FlapJax, Sodium
+    }
 
-    private void CompileOperation()
+    private void CompileOperation(CompileType type)
     {
         var data = Resources.Load<FrpGraphContainer>(_fileName);
         var ir = IntermediateRepresentation.Create(data);
-        FrapjaxCompiler.Print(ir);
+        switch (type)
+        {
+            case CompileType.FlapJax:
+            {
+                FrapjaxCompiler.Print(ir);
+                break;
+            }
+            case CompileType.Sodium:
+            {
+                SodiumCompiler.Print(ir);
+                break;
+            }
+        }
     }
 }

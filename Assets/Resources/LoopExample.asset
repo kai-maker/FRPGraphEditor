@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97e84e64d9c6024c98f959834f525a8, type: 3}
+  m_Name: LoopExample
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - ConnectionName: clicked
+    BaseNodeGuid: a4a314bc-3856-4eee-a4a5-089d9de52214
+    BasePortName: 'clicked: E<Unit>'
+    BasePortNum: 0
+    TargetNodeGuid: be953f56-ed9a-4799-844a-b0e45d85d671
+    TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: m
+    BaseNodeGuid: be953f56-ed9a-4799-844a-b0e45d85d671
+    BasePortName: 'out: E<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 605deb09-6e8b-4673-bb35-913e884a466c
+    TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: d
+    BaseNodeGuid: 605deb09-6e8b-4673-bb35-913e884a466c
+    BasePortName: 'out: E<T>'
+    BasePortNum: 0
+    TargetNodeGuid: bc1eae98-9df3-4e58-9b0e-43ba5bd0062b
+    TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: a
+    BaseNodeGuid: bc1eae98-9df3-4e58-9b0e-43ba5bd0062b
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 57ea1645-e0e5-4735-adf2-f75dadf5c246
+    TargetPortName: 'a: B<T>'
+    TargetPortNum: 0
+  - ConnectionName: b
+    BaseNodeGuid: 57ea1645-e0e5-4735-adf2-f75dadf5c246
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 2992ddbf-09bc-468e-88e7-6c46716bf987
+    TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: c
+    BaseNodeGuid: 2992ddbf-09bc-468e-88e7-6c46716bf987
+    BasePortName: 'out: E<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 605deb09-6e8b-4673-bb35-913e884a466c
+    TargetPortName: 'b: B<T>'
+    TargetPortNum: 1
+  FrpNodeData:
+  - Guid: a4a314bc-3856-4eee-a4a5-089d9de52214
+    CodeText: Write code here
+    Position: {x: 185, y: 254}
+    OperatorInfo:
+      OperatorName: ButtonE
+      OperatorReturnName: 'clicked: E<Unit>'
+      OperatorArgumentNames: []
+  - Guid: be953f56-ed9a-4799-844a-b0e45d85d671
+    CodeText: x -> 1
+    Position: {x: 428, y: 262}
+    OperatorInfo:
+      OperatorName: MapE
+      OperatorReturnName: 'out: E<T>'
+      OperatorArgumentNames:
+      - 'a: E<T>'
+  - Guid: bc1eae98-9df3-4e58-9b0e-43ba5bd0062b
+    CodeText: 0
+    Position: {x: 990, y: 270}
+    OperatorInfo:
+      OperatorName: Hold
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames:
+      - 'a: E<T>'
+  - Guid: 2992ddbf-09bc-468e-88e7-6c46716bf987
+    CodeText: Write code here
+    Position: {x: 682, y: -70}
+    OperatorInfo:
+      OperatorName: MapE
+      OperatorReturnName: 'out: E<T>'
+      OperatorArgumentNames:
+      - 'a: E<T>'
+  - Guid: 57ea1645-e0e5-4735-adf2-f75dadf5c246
+    CodeText: Write code here
+    Position: {x: 970, y: 108}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames:
+      - 'a: B<T>'
+  - Guid: 605deb09-6e8b-4673-bb35-913e884a466c
+    CodeText: Write code here
+    Position: {x: 717, y: 271}
+    OperatorInfo:
+      OperatorName: SnapshotE
+      OperatorReturnName: 'out: E<T>'
+      OperatorArgumentNames:
+      - 'a: E<T>'
+      - 'b: B<T>'
+  ExposedProperties: []
+  CommentBlockData: []

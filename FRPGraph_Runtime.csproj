@@ -64,6 +64,8 @@
      <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\IntermediateRepresentation.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\NodeDataTable.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\SodiumCompiler.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\GraphAlgorithms\Graph.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\GraphAlgorithms\TarjanStronglyConnectedComponent.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\CommentBlockData.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\ExposedProperty.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\GraphDataSerializable\Fields\FrpNodeData.cs" />
