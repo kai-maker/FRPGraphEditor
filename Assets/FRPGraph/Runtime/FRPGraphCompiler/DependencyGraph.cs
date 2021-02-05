@@ -7,11 +7,11 @@ namespace FRPGraph.Runtime
 {
     public class DependencyGraph
     {
-        private List<Node> _adjacencyList;
+        private List<Node<Guid>> _adjacencyList;
 
         public static DependencyGraph Create(FrpGraphContainer frpGraphContainer)
         {
-            var dictionary = new Dictionary<Guid, Node>();
+            var dictionary = new Dictionary<Guid, Node<Guid>>();
             foreach (var nodeLinkData in frpGraphContainer.NodeLinks)
             {
                 Guid baseGuid, targetGuid;
@@ -25,16 +25,16 @@ namespace FRPGraph.Runtime
                     || e is FormatException
                     || e is OverflowException)
                 {
-                    Debug.Log($"Invalid Guid string format.\n{e}");
+                    Debug.Log($"Invalid Id string format.\n{e}");
                     return null;
                 }
 
                 var baseNode = dictionary.ContainsKey(baseGuid)
                     ? dictionary[baseGuid]
-                    : dictionary[baseGuid] = new Node(baseGuid);
+                    : dictionary[baseGuid] = new Node<Guid>(baseGuid);
                 var targetNode = dictionary.ContainsKey(targetGuid)
                     ? dictionary[targetGuid]
-                    : dictionary[targetGuid] = new Node(targetGuid);
+                    : dictionary[targetGuid] = new Node<Guid>(targetGuid);
                 baseNode.OutputLinks.Add(targetNode);
                 targetNode.InputLinks.Add(baseNode);
             }
@@ -47,34 +47,34 @@ namespace FRPGraph.Runtime
 
         public List<Guid> TopologicalSort()
         {
-            var dict = new Dictionary<Guid, Node>();
+            var dict = new Dictionary<Guid, Node<Guid>>();
             foreach (var node in _adjacencyList)
             {
-                var newNode = dict.ContainsKey(node.Guid)
-                    ? dict[node.Guid]
-                    : dict[node.Guid] = new Node(node.Guid);
+                var newNode = dict.ContainsKey(node.Id)
+                    ? dict[node.Id]
+                    : dict[node.Id] = new Node<Guid>(node.Id);
                 foreach (var inputNode in node.InputLinks)
                 {
-                    var newInputNode = dict.ContainsKey(inputNode.Guid)
-                        ? dict[inputNode.Guid]
-                        : dict[inputNode.Guid] = new Node(inputNode.Guid);
+                    var newInputNode = dict.ContainsKey(inputNode.Id)
+                        ? dict[inputNode.Id]
+                        : dict[inputNode.Id] = new Node<Guid>(inputNode.Id);
                     newNode.InputLinks.Add(newInputNode);
                 }
                 foreach (var outputNode in node.OutputLinks)
                 {
-                    var newOutputNode = dict.ContainsKey(outputNode.Guid)
-                        ? dict[outputNode.Guid]
-                        : dict[outputNode.Guid] = new Node(outputNode.Guid);
+                    var newOutputNode = dict.ContainsKey(outputNode.Id)
+                        ? dict[outputNode.Id]
+                        : dict[outputNode.Id] = new Node<Guid>(outputNode.Id);
                     newNode.OutputLinks.Add(newOutputNode);
                 }
             }
             var list = dict.Values.ToList();
-            var rootNodes = new Queue<Node>(list.FindAll(node => node.InputLinks.Count == 0));
+            var rootNodes = new Queue<Node<Guid>>(list.FindAll(node => node.InputLinks.Count == 0));
             var resultList = new List<Guid>();
             while (rootNodes.Count != 0)
             {
                 var rootNode = rootNodes.Dequeue();
-                resultList.Add(rootNode.Guid);
+                resultList.Add(rootNode.Id);
                 var nextNodes = rootNode.OutputLinks.ToList();
                 foreach (var nextNode in nextNodes)
                 {
@@ -95,15 +95,41 @@ namespace FRPGraph.Runtime
             return resultList;
         }
 
-        private class Node
+        public void CutToAcyclicGraph()
         {
-            public readonly Guid Guid;
-            public readonly List<Node> OutputLinks = new List<Node>();
-            public readonly List<Node> InputLinks = new List<Node>();
-
-            public Node(Guid guid)
+            var dict = new Dictionary<Guid, Node<Guid>>();
+            foreach (var node in _adjacencyList)
             {
-                Guid = guid;
+                var newNode = dict.ContainsKey(node.Id)
+                    ? dict[node.Id]
+                    : dict[node.Id] = new Node<Guid>(node.Id);
+                foreach (var inputNode in node.InputLinks)
+                {
+                    var newInputNode = dict.ContainsKey(inputNode.Id)
+                        ? dict[inputNode.Id]
+                        : dict[inputNode.Id] = new Node<Guid>(inputNode.Id);
+                    newNode.InputLinks.Add(newInputNode);
+                }
+                foreach (var outputNode in node.OutputLinks)
+                {
+                    var newOutputNode = dict.ContainsKey(outputNode.Id)
+                        ? dict[outputNode.Id]
+                        : dict[outputNode.Id] = new Node<Guid>(outputNode.Id);
+                    newNode.OutputLinks.Add(newOutputNode);
+                }
+            }
+            var list = dict.Values.ToList();
+        }
+
+        private class Node<T>
+        {
+            public readonly T Id;
+            public readonly List<Node<T>> OutputLinks = new List<Node<T>>();
+            public readonly List<Node<T>> InputLinks = new List<Node<T>>();
+
+            public Node(T id)
+            {
+                Id = id;
             }
         }
     }

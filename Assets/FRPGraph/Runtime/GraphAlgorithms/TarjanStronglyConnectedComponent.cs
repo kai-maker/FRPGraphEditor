@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 
 namespace FRPGraph.Runtime.GraphAlgorithms
 {
@@ -118,8 +116,9 @@ namespace FRPGraph.Runtime.GraphAlgorithms
             {
                 foreach (var vertex in scc)
                 {
-                    Debug.Log(vertex + " ");
+                    Console.Write(vertex + " ");
                 }
+                Console.WriteLine();
             });
         }
     }

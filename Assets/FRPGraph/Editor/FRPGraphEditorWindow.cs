@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using FRPGraph.Runtime;
+using FRPGraph.Runtime.GraphAlgorithms;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
@@ -81,6 +82,7 @@ public class FRPGraphEditorWindow : EditorWindow
         toolbar.Add(new Button(() => RequestDataOperation(false)) {text = "Load Data"});
         toolbar.Add(new Button(() => CompileOperation(CompileType.FlapJax)) {text = "Compile to JS"});
         toolbar.Add(new Button(() => CompileOperation(CompileType.Sodium)) {text = "Compile to Java"});
+        toolbar.Add(new Button(() => Test()) {text = "Test"});
         
         toolbar.styleSheets.Add(Resources.Load<StyleSheet>("ToolBar"));
 
@@ -135,5 +137,10 @@ public class FRPGraphEditorWindow : EditorWindow
                 break;
             }
         }
+    }
+
+    private void Test()
+    {
+        AllCyclesInDirectedGraphJohnson.Test();
     }
 }
