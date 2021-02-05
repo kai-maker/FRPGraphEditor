@@ -14,8 +14,9 @@ namespace FRPGraph.Runtime
         public static IntermediateRepresentation Create(FrpGraphContainer graphContainer)
         {
             var depGraph = DependencyGraph.Create(graphContainer);
-            var order = depGraph.TopologicalSort();
+            var cutEdge = depGraph.CutToAcyclicGraph();
             var table = NodeDataTable.Create(graphContainer);
+            var order = depGraph.TopologicalSort();
 
             return new IntermediateRepresentation{order = order, table = table};
         }

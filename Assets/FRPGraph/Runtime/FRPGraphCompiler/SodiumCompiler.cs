@@ -82,6 +82,12 @@ namespace FRPGraph.Runtime
                     stringBuilder.AppendLine($"final var {node.Return} = {node.CodeText}.text;");
                     result.Append(stringBuilder);
                 }
+                else if (node.OperatorType == "ButtonE")
+                {
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.AppendLine($"//ButtonE {node.Return} = {node.CodeText} ");
+                    result.Append(stringBuilder);
+                }
                 else
                 {
                     StringBuilder stringBuilder = new StringBuilder();
