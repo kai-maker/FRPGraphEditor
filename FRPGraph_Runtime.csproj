@@ -58,7 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FRPGraph\Runtime\Events\EventType.cs" />
+     <Compile Include="Assets\FRPGraph\Runtime\Deprecate\EventType.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\DependencyGraph.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\FrapjaxCompiler.cs" />
      <Compile Include="Assets\FRPGraph\Runtime\FRPGraphCompiler\IntermediateRepresentation.cs" />

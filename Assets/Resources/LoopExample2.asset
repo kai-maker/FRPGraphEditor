@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f97e84e64d9c6024c98f959834f525a8, type: 3}
-  m_Name: LoopExample
+  m_Name: LoopExample2
   m_EditorClassIdentifier: 
   NodeLinks:
   - ConnectionName: sClicked
@@ -48,20 +48,6 @@ MonoBehaviour:
     TargetNodeGuid: 44ba897f-66de-4280-a6ea-6780667ca27d
     TargetPortName: 'b: B<T>'
     TargetPortNum: 1
-  - ConnectionName: d2
-    BaseNodeGuid: 44ba897f-66de-4280-a6ea-6780667ca27d
-    BasePortName: 'out: E<T>'
-    BasePortNum: 0
-    TargetNodeGuid: 34f18659-983e-4d51-b041-088837c706e3
-    TargetPortName: 'a: E<T>'
-    TargetPortNum: 0
-  - ConnectionName: a2
-    BaseNodeGuid: 34f18659-983e-4d51-b041-088837c706e3
-    BasePortName: 'out: B<T>'
-    BasePortNum: 0
-    TargetNodeGuid: ae8a272e-4b69-4887-a81b-591dc07ff950
-    TargetPortName: 'a: B<T>'
-    TargetPortNum: 0
   - ConnectionName: b2
     BaseNodeGuid: ae8a272e-4b69-4887-a81b-591dc07ff950
     BasePortName: 'out: B<T>'
@@ -89,6 +75,13 @@ MonoBehaviour:
     BasePortNum: 0
     TargetNodeGuid: 44ba897f-66de-4280-a6ea-6780667ca27d
     TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: New Connection
+    BaseNodeGuid: 356ccf03-75ff-4be9-b0db-2989a714d949
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: ae8a272e-4b69-4887-a81b-591dc07ff950
+    TargetPortName: 'a: B<T>'
     TargetPortNum: 0
   FrpNodeData:
   - Guid: 44ba897f-66de-4280-a6ea-6780667ca27d
@@ -144,15 +137,6 @@ MonoBehaviour:
       OperatorReturnName: 'out: B<T>'
       OperatorArgumentNames:
       - 'a: B<T>'
-      OperatorReturnType: 1
-  - Guid: 34f18659-983e-4d51-b041-088837c706e3
-    CodeText: Write code here
-    Position: {x: 698, y: 440}
-    OperatorInfo:
-      OperatorName: Hold
-      OperatorReturnName: 'out: B<T>'
-      OperatorArgumentNames:
-      - 'a: E<T>'
       OperatorReturnType: 1
   - Guid: ae8a272e-4b69-4887-a81b-591dc07ff950
     CodeText: Write code here
