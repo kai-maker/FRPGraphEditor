@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using FRPGraph.Editor.Nodes;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace FRPGraph.Runtime
@@ -10,15 +11,32 @@ namespace FRPGraph.Runtime
     {
         public List<Guid> order;
         public Dictionary<Guid, NodeDataTable.NodeData> table;
+        public List<Tuple<string, EventType>> refEvents;
+
+        public static string ToRefName(string s)
+        {
+            return "ref" + s[0].ToString().ToUpper() + s.Substring(1);
+        }
         
         public static IntermediateRepresentation Create(FrpGraphContainer graphContainer)
         {
             var depGraph = DependencyGraph.Create(graphContainer);
-            var cutEdge = depGraph.CutToAcyclicGraph();
+            var edgePortPairs = depGraph.CutToAcyclicGraph();
+            var refEvents = new List<Tuple<string, EventType>>();
+            
             var table = NodeDataTable.Create(graphContainer);
+            foreach (var edgePortPair in edgePortPairs)
+            {
+                var name = table[edgePortPair.Edge.Vertex2].Arguments[edgePortPair.Port];
+                var type = table[edgePortPair.Edge.Vertex1].ReturnType;
+                var refName = ToRefName(name);
+                refEvents.Add(new Tuple<string, EventType>(name, type));
+                table[edgePortPair.Edge.Vertex2].Arguments[edgePortPair.Port] = refName;
+            }
+
             var order = depGraph.TopologicalSort();
 
-            return new IntermediateRepresentation{order = order, table = table};
+            return new IntermediateRepresentation{order = order, table = table, refEvents = refEvents};
         }
 
         private static string ConvertOperatorName(string input)

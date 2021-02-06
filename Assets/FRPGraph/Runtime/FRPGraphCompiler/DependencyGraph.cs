@@ -10,10 +10,12 @@ namespace FRPGraph.Runtime
     public class DependencyGraph
     {
         private List<Node<Guid>> _adjacencyList;
+        private Dictionary<Edge, int> _edgeToPort;
 
         public static DependencyGraph Create(FrpGraphContainer frpGraphContainer)
         {
             var dictionary = new Dictionary<Guid, Node<Guid>>();
+            var edgeToPort = new Dictionary<Edge, int>();
             foreach (var nodeLinkData in frpGraphContainer.NodeLinks)
             {
                 Guid baseGuid, targetGuid;
@@ -39,11 +41,13 @@ namespace FRPGraph.Runtime
                     : dictionary[targetGuid] = new Node<Guid>(targetGuid);
                 baseNode.OutputLinks.Add(targetNode);
                 targetNode.InputLinks.Add(baseNode);
+                edgeToPort.Add(new Edge(baseGuid, targetGuid), nodeLinkData.BasePortNum);
             }
-            
+
             return new DependencyGraph
             {
                 _adjacencyList = dictionary.Values.ToList(),
+                _edgeToPort = edgeToPort
             };
         }
 
@@ -103,7 +107,21 @@ namespace FRPGraph.Runtime
             return resultList;
         }
 
-        public Tuple<Guid, Guid> CutToAcyclicGraph()
+        public class EdgePortPair
+        {
+            private Edge _edge;
+            private int _port;
+            public Edge Edge => _edge;
+            public int Port => _port;
+
+            public EdgePortPair(Edge edge, int port)
+            {
+                _edge = edge;
+                _port = port;
+            }
+        }
+
+        public List<EdgePortPair> CutToAcyclicGraph()
         {
             var guid2LongMap = new Dictionary<Guid, long>();
             var long2GuidMap = new Dictionary<long, Guid>();
@@ -131,17 +149,65 @@ namespace FRPGraph.Runtime
             {
                 var guidCycle = cycle.Select(vertex => long2GuidMap[vertex.GetId()]).ToList();
                 allCyclesGuid.Add(guidCycle);
-                //Print
-                var str = cycle.Select(vertex => long2GuidMap[vertex.GetId()].ToString())
-                    .Aggregate((acc, val) => $"{acc} -> {val}");
-                Debug.Log(str);
             }
-
-            var cutEdge = new Tuple<Guid, Guid>(allCyclesGuid.Last()[0], allCyclesGuid.Last()[1]);
+            /*
+             * 変更箇所
+             */
+            //var cutEdge = new Edge(allCyclesGuid.Last()[0], allCyclesGuid.Last()[1]);
             
             //Cut
-            RemoveEdge(cutEdge.Item1, cutEdge.Item2);
-            return cutEdge;
+            var cutEdges = ResolveAllCycle(allCyclesGuid);
+
+            var edgePortPair = new List<EdgePortPair>();
+            foreach (var cutEdge in cutEdges)
+            {
+                RemoveEdge(cutEdge.Vertex1, cutEdge.Vertex2);
+                int port = _edgeToPort[cutEdge];
+                edgePortPair.Add(new EdgePortPair(cutEdge, port));
+            }
+            return edgePortPair;
+        }
+
+        private static List<Edge> ResolveAllCycle(List<List<Guid>> cycles)
+        {
+            var edgeMultiplicities = new Dictionary<Edge, Tuple<HashSet<int>, Edge>>();
+            var remainingCycle = new HashSet<int>();
+            var cutEdges = new List<Edge>();
+            foreach (var (cycle, index) in cycles.Select((list, index) => (list, index)))
+            {
+                var cycleStr = cycle.Select(val => val.ToString()).Aggregate((acc, val) => $"{acc} -> {val}");
+                Debug.Log(cycleStr);
+                for (int i = 0; i < cycle.Count - 1; ++i)
+                {
+                    var edge = new Edge(cycle[i], cycle[i+1]);
+                    var multiplicity = edgeMultiplicities.ContainsKey(edge)
+                        ? edgeMultiplicities[edge]
+                        : edgeMultiplicities[edge] = new Tuple<HashSet<int>, Edge>(new HashSet<int>(), edge);
+                    multiplicity.Item1.Add(index);
+                }
+                remainingCycle.Add(index);
+            }
+
+            while (remainingCycle.Count != 0)
+            {
+                var mostMultipleEdge = edgeMultiplicities.Values.OrderByDescending(x => x.Item1.Count).First();
+                cutEdges.Add(mostMultipleEdge.Item2);
+                Debug.Log($"Cut {mostMultipleEdge.Item2.Vertex1} -> {mostMultipleEdge.Item2.Vertex2}");
+                var cycleIndices = mostMultipleEdge.Item1.ToList();
+                foreach (var cycleIndex in cycleIndices)
+                {
+                    var cycle = cycles[cycleIndex];
+                    for (int i = 0; i < cycle.Count - 1; ++i)
+                    {
+                        var edge = new Edge(cycle[i], cycle[i+1]);
+                        var multiplicity = edgeMultiplicities[edge];
+                        multiplicity.Item1.Remove(cycleIndex);
+                    }
+                    if (remainingCycle.Contains(cycleIndex))
+                        remainingCycle.Remove(cycleIndex);
+                }
+            }
+            return cutEdges;
         }
 
         private void RemoveEdge(Guid vertex1, Guid vertex2)
@@ -171,8 +237,40 @@ namespace FRPGraph.Runtime
             node2.InputLinks.Add(node1);
             _adjacencyList = dict.Values.ToList();
         }
-        
-        
+
+        public class Edge
+        {
+            private Guid _vertex1;
+
+            public Guid Vertex1 => _vertex1;
+
+            public Guid Vertex2 => _vertex2;
+
+            private Guid _vertex2;
+            public Edge(Guid vertex1, Guid vertex2)
+            {
+                _vertex1 = vertex1;
+                _vertex2 = vertex2;
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null) return false;
+                if (obj.GetType() != GetType()) return false;
+                var target = (Edge) obj;
+                return target._vertex1 == _vertex1 && target._vertex2 == _vertex2;
+            }
+
+            public override int GetHashCode()
+            {
+                return _vertex1.GetHashCode() + _vertex2.GetHashCode();
+            }
+
+            public override string ToString()
+            {
+                return $"[{_vertex1.ToString()} -> {_vertex2.ToString()}]";
+            }
+        }
 
         private class Node<T>
         {

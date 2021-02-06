@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace FRPGraph.Runtime
+namespace FRPGraph.Deprecate
 {
     public class EventType
     {

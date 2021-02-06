@@ -15,6 +15,7 @@ namespace FRPGraph.Runtime
                     OperatorType = nodeData.OperatorInfo.OperatorName,
                     CodeText = nodeData.CodeText,
                     Return = null,
+                    ReturnType = nodeData.OperatorInfo.OperatorReturnType,
                     Arguments = new List<string>()
                 };
             }
@@ -34,6 +35,7 @@ namespace FRPGraph.Runtime
             public string OperatorType;
             public string CodeText;
             public string Return;
+            public EventType ReturnType;
             public List<string> Arguments;
         }
     }

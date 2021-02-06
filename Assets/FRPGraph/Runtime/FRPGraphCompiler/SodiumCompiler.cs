@@ -12,6 +12,9 @@ namespace FRPGraph.Runtime
                 case "LiftB": return "map";
                 case "Lift2B": return "lift";
                 case "DomInputB": return "";
+                case "Hold": return "hold";
+                case "MapE": return "map";
+                case "SnapshotE": return "snapshot";
                 //デフォルトでは小文字 + Bにする
                 default: return input.ToLower().Remove(input.Length - 1) + "B";
             }
@@ -20,6 +23,13 @@ namespace FRPGraph.Runtime
         public static string Compile(IntermediateRepresentation imr)
         {
             StringBuilder result = new StringBuilder();
+            foreach (var e in imr.refEvents)
+            {
+                var refName = IntermediateRepresentation.ToRefName(e.Item1);
+                string loop() => e.Item2 == EventType.Event ? "StreamLoop" : "CellLoop";
+                result.AppendLine($"final var {refName} = new {loop()}<Integer>();");
+            }
+            result.AppendLine();
             foreach (var guid in imr.order)
             {
                 var node = imr.table[guid];
@@ -108,6 +118,12 @@ namespace FRPGraph.Runtime
                     stringBuilder.Append("\n");
                     result.Append(stringBuilder);
                 }
+            }
+            result.AppendLine();
+            foreach (var e in imr.refEvents)
+            {
+                var refName = IntermediateRepresentation.ToRefName(e.Item1);
+                result.AppendLine($"{refName}.loop({e.Item1});");
             }
             return result.ToString();
         }

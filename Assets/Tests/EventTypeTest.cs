@@ -1,4 +1,4 @@
-﻿using FRPGraph.Runtime;
+﻿using FRPGraph.Deprecate;
 using NUnit.Framework;
 using Assert = UnityEngine.Assertions.Assert;
 

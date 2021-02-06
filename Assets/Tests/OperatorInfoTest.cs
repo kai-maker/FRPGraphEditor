@@ -1,4 +1,4 @@
-﻿using NewFrpGraph.Operators;
+﻿using FRPGraph.Runtime;
 using NUnit.Framework;
 
 namespace Tests
