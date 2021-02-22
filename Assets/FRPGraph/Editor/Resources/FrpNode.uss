@@ -1,7 +1,5 @@
-﻿.map #title {
-}
-
-.switch #title {
+﻿Layer Edge.edge {
+    --edge-width: 5
 }
 
 EdgeControl {
@@ -19,9 +17,38 @@ EdgeControl Label {
     visibility: hidden;
 }
 
-EdgeControl TextInput {
+EdgeControl TextInput#unity-text-input {
     min-width: 80;
-    height: 20;
-    border-color: white;
+    height: 30;
+    font-size: 24px;
+    -unity-font-style: bold;
     background-color: #000000;
+    border-width: 2;
+    border-color: white;
+}
+
+VisualElement#node-border {
+    border-left-color: white;
+    border-right-color: white;
+    border-bottom-color: white;
+    border-top-color: white;
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-top-width: 4px;
+}
+
+Label#title-label {
+    -unity-font-style: bold;
+    font-size: 24px;
+}
+
+.port > Label#type {
+    -unity-font-style: bold;
+    font-size: 24px;
+}
+
+TextField TextInput#unity-text-input {
+    -unity-font-style: bold;
+    font-size: 24px;
 }
