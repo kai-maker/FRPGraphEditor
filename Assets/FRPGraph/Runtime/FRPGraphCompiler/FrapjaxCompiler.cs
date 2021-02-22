@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Linq;
+using System.Text;
 using UnityEngine;
 
 namespace FRPGraph.Runtime
@@ -11,8 +12,12 @@ namespace FRPGraph.Runtime
             {
                 case "Lift2B": return "liftB";
                 case "DomInputB": return "";
-                //デフォルトでは小文字 + Bにする
-                default: return input.ToLower().Remove(input.Length - 1) + "B";
+                //デフォルトでは小文字 + B or Eにする
+                default:
+                {
+                    var copy = input;
+                    return copy.ToLower().Remove(input.Length - 1) + input.Last();
+                }
             }
         }
         
@@ -24,11 +29,18 @@ namespace FRPGraph.Runtime
             {
                 var node = imr.table[guid];
                 // ignore ConstantB and EndB
-                if(node.OperatorType == "ConstantB" || node.OperatorType == "EndB") continue;
+                if(node.OperatorType == "ConstantB") continue;
                 if (node.OperatorType == "DomInputB")
                 {
                     StringBuilder stringBuilder = new StringBuilder();
-                    stringBuilder.Append($"const {node.Return} = extractValueB(document.querySelector('#{node.CodeText}'))");
+                    stringBuilder.Append($"const {node.Return} = extractValueB(document.querySelector('#{node.CodeText}'));");
+                    stringBuilder.Append("\n");
+                    result.Append(stringBuilder);
+                }
+                else if (node.OperatorType == "DomInputE")
+                {
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.Append($"const {node.Return} = extractValueE(document.querySelector('#{node.CodeText}'));");
                     stringBuilder.Append("\n");
                     result.Append(stringBuilder);
                 }
@@ -36,6 +48,13 @@ namespace FRPGraph.Runtime
                 {
                     StringBuilder stringBuilder = new StringBuilder();
                     stringBuilder.Append($"insertDomB( {node.Arguments[0]} , '{node.CodeText}' );");
+                    stringBuilder.Append("\n");
+                    result.Append(stringBuilder);
+                }
+                else if (node.OperatorType == "DomOutputE")
+                {
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.Append($"insertDomE( {node.Arguments[0]} , '{node.CodeText}' );");
                     stringBuilder.Append("\n");
                     result.Append(stringBuilder);
                 }
@@ -51,6 +70,20 @@ namespace FRPGraph.Runtime
                 {
                     StringBuilder stringBuilder = new StringBuilder();
                     stringBuilder.Append($"insertDomB( {node.Arguments[0]} , '{node.CodeText}' );");
+                    stringBuilder.Append("\n");
+                    result.Append(stringBuilder);
+                }
+                else if (node.OperatorType == "SnapshotE")
+                {
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.Append($"const {node.Return} = snapshotE( {node.Arguments[0]} , {node.Arguments[1]} );");
+                    stringBuilder.Append("\n");
+                    result.Append(stringBuilder);
+                }
+                else if (node.OperatorType == "FilterE")
+                {
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.Append($"const {node.Return} = filterE( {node.Arguments[0]} , {node.CodeText} );");
                     stringBuilder.Append("\n");
                     result.Append(stringBuilder);
                 }
