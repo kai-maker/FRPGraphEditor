@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97e84e64d9c6024c98f959834f525a8, type: 3}
+  m_Name: SimpleLoop2
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - ConnectionName: sClicked
+    BaseNodeGuid: eab1f562-e645-4646-92d1-c4397e53e39e
+    BasePortName: 'clicked: E<Unit>'
+    BasePortNum: 0
+    TargetNodeGuid: 1a6ed25c-6f8f-44e2-b423-0a9482433f09
+    TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: d
+    BaseNodeGuid: 44ba897f-66de-4280-a6ea-6780667ca27d
+    BasePortName: 'out: E<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 356ccf03-75ff-4be9-b0db-2989a714d949
+    TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: m
+    BaseNodeGuid: 1a6ed25c-6f8f-44e2-b423-0a9482433f09
+    BasePortName: 'out: E<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 44ba897f-66de-4280-a6ea-6780667ca27d
+    TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: state
+    BaseNodeGuid: 356ccf03-75ff-4be9-b0db-2989a714d949
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 44ba897f-66de-4280-a6ea-6780667ca27d
+    TargetPortName: 'b: B<T>'
+    TargetPortNum: 1
+  FrpNodeData:
+  - Guid: 44ba897f-66de-4280-a6ea-6780667ca27d
+    CodeText: (x, y) -> x + y
+    Position: {x: 528, y: 369}
+    OperatorInfo:
+      OperatorName: SnapshotE
+      OperatorReturnName: 'out: E<T>'
+      OperatorArgumentNames:
+      - 'a: E<T>'
+      - 'b: B<T>'
+      OperatorReturnType: 0
+  - Guid: 1a6ed25c-6f8f-44e2-b423-0a9482433f09
+    CodeText: x -> 1
+    Position: {x: 240, y: 344}
+    OperatorInfo:
+      OperatorName: MapE
+      OperatorReturnName: 'out: E<T>'
+      OperatorArgumentNames:
+      - 'a: E<T>'
+      OperatorReturnType: 0
+  - Guid: 356ccf03-75ff-4be9-b0db-2989a714d949
+    CodeText: 0
+    Position: {x: 479, y: 193}
+    OperatorInfo:
+      OperatorName: Hold
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames:
+      - 'a: E<T>'
+      OperatorReturnType: 1
+  - Guid: eab1f562-e645-4646-92d1-c4397e53e39e
+    CodeText: Write code here
+    Position: {x: 1, y: 328}
+    OperatorInfo:
+      OperatorName: ButtonE
+      OperatorReturnName: 'clicked: E<Unit>'
+      OperatorArgumentNames: []
+      OperatorReturnType: 0
+  ExposedProperties: []
+  CommentBlockData: []

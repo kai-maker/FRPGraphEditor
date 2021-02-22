@@ -48,7 +48,7 @@ MonoBehaviour:
     TargetNodeGuid: 44ba897f-66de-4280-a6ea-6780667ca27d
     TargetPortName: 'b: B<T>'
     TargetPortNum: 1
-  - ConnectionName: d2
+  - ConnectionName: d
     BaseNodeGuid: 44ba897f-66de-4280-a6ea-6780667ca27d
     BasePortName: 'out: E<T>'
     BasePortNum: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
       - 'a: B<T>'
       OperatorReturnType: 1
   - Guid: 34f18659-983e-4d51-b041-088837c706e3
-    CodeText: Write code here
+    CodeText: 0
     Position: {x: 698, y: 440}
     OperatorInfo:
       OperatorName: Hold
@@ -155,7 +155,7 @@ MonoBehaviour:
       - 'a: E<T>'
       OperatorReturnType: 1
   - Guid: ae8a272e-4b69-4887-a81b-591dc07ff950
-    CodeText: Write code here
+    CodeText: x -> x
     Position: {x: 815, y: 573}
     OperatorInfo:
       OperatorName: LiftB
@@ -164,7 +164,7 @@ MonoBehaviour:
       - 'a: B<T>'
       OperatorReturnType: 1
   - Guid: 0a9616b4-6e10-407e-bb1a-9da1c0d17546
-    CodeText: Write code here
+    CodeText: x -> x
     Position: {x: 506, y: 637}
     OperatorInfo:
       OperatorName: LiftB
@@ -173,7 +173,7 @@ MonoBehaviour:
       - 'a: B<T>'
       OperatorReturnType: 1
   - Guid: d193a709-1945-4df4-ae1d-2a3b3b7e19c6
-    CodeText: Write code here
+    CodeText: (x, y) -> x + y
     Position: {x: 348, y: 438}
     OperatorInfo:
       OperatorName: SnapshotE

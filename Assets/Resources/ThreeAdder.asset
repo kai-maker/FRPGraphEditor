@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97e84e64d9c6024c98f959834f525a8, type: 3}
+  m_Name: ThreeAdder
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - ConnectionName: c
+    BaseNodeGuid: 0bc49156-183b-4b34-a9af-3f68debfcec5
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 1d44bd75-5be9-4b11-a13c-6815e3ebaca5
+    TargetPortName: 'a: B<T>'
+    TargetPortNum: 0
+  - ConnectionName: a
+    BaseNodeGuid: 37ca26d7-35b2-44a9-881c-33233ed51bde
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 0bc49156-183b-4b34-a9af-3f68debfcec5
+    TargetPortName: 'a: B<T>'
+    TargetPortNum: 0
+  - ConnectionName: b
+    BaseNodeGuid: 6f7d89dc-d991-4134-b31f-704f0f37dd38
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 0bc49156-183b-4b34-a9af-3f68debfcec5
+    TargetPortName: 'a: B<T>'
+    TargetPortNum: 0
+  - ConnectionName: d
+    BaseNodeGuid: 90a10fbe-a389-4195-83b8-e24be4223c57
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 1d44bd75-5be9-4b11-a13c-6815e3ebaca5
+    TargetPortName: 'a: B<T>'
+    TargetPortNum: 0
+  - ConnectionName: e
+    BaseNodeGuid: 1d44bd75-5be9-4b11-a13c-6815e3ebaca5
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 2ca65c9c-9380-4e0c-bf56-c687a1d4c362
+    TargetPortName: B<T>
+    TargetPortNum: 0
+  FrpNodeData:
+  - Guid: 0bc49156-183b-4b34-a9af-3f68debfcec5
+    CodeText: (x, y) => x + y
+    Position: {x: 318, y: 181}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames:
+      - 'a: B<T>'
+      - 'a: B<T>'
+      OperatorReturnType: 1
+  - Guid: 1d44bd75-5be9-4b11-a13c-6815e3ebaca5
+    CodeText: (x, y) => x + y
+    Position: {x: 654, y: 320}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames:
+      - 'a: B<T>'
+      - 'a: B<T>'
+      OperatorReturnType: 1
+  - Guid: 90a10fbe-a389-4195-83b8-e24be4223c57
+    CodeText: input3
+    Position: {x: 98, y: 439}
+    OperatorInfo:
+      OperatorName: InputB
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames: []
+      OperatorReturnType: 1
+  - Guid: 2ca65c9c-9380-4e0c-bf56-c687a1d4c362
+    CodeText: output
+    Position: {x: 924, y: 340}
+    OperatorInfo:
+      OperatorName: EndB
+      OperatorReturnName: None
+      OperatorArgumentNames:
+      - B<T>
+      OperatorReturnType: 1
+  - Guid: 37ca26d7-35b2-44a9-881c-33233ed51bde
+    CodeText: input1
+    Position: {x: 91, y: 126}
+    OperatorInfo:
+      OperatorName: InputB
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames: []
+      OperatorReturnType: 1
+  - Guid: 6f7d89dc-d991-4134-b31f-704f0f37dd38
+    CodeText: input2
+    Position: {x: 90, y: 276}
+    OperatorInfo:
+      OperatorName: InputB
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames: []
+      OperatorReturnType: 1
+  ExposedProperties: []
+  CommentBlockData: []

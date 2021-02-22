@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f97e84e64d9c6024c98f959834f525a8, type: 3}
-  m_Name: LoopExample2
+  m_Name: SimpleLoop
   m_EditorClassIdentifier: 
   NodeLinks:
   - ConnectionName: sClicked
@@ -48,40 +48,12 @@ MonoBehaviour:
     TargetNodeGuid: 44ba897f-66de-4280-a6ea-6780667ca27d
     TargetPortName: 'b: B<T>'
     TargetPortNum: 1
-  - ConnectionName: b2
-    BaseNodeGuid: ae8a272e-4b69-4887-a81b-591dc07ff950
-    BasePortName: 'out: B<T>'
-    BasePortNum: 0
-    TargetNodeGuid: 0a9616b4-6e10-407e-bb1a-9da1c0d17546
-    TargetPortName: 'a: B<T>'
-    TargetPortNum: 0
-  - ConnectionName: c2
-    BaseNodeGuid: 0a9616b4-6e10-407e-bb1a-9da1c0d17546
-    BasePortName: 'out: B<T>'
-    BasePortNum: 0
-    TargetNodeGuid: d193a709-1945-4df4-ae1d-2a3b3b7e19c6
-    TargetPortName: 'b: B<T>'
-    TargetPortNum: 1
   - ConnectionName: m
     BaseNodeGuid: 1a6ed25c-6f8f-44e2-b423-0a9482433f09
     BasePortName: 'out: E<T>'
     BasePortNum: 0
-    TargetNodeGuid: d193a709-1945-4df4-ae1d-2a3b3b7e19c6
-    TargetPortName: 'a: E<T>'
-    TargetPortNum: 0
-  - ConnectionName: m2
-    BaseNodeGuid: d193a709-1945-4df4-ae1d-2a3b3b7e19c6
-    BasePortName: 'out: E<T>'
-    BasePortNum: 0
     TargetNodeGuid: 44ba897f-66de-4280-a6ea-6780667ca27d
     TargetPortName: 'a: E<T>'
-    TargetPortNum: 0
-  - ConnectionName: a
-    BaseNodeGuid: 356ccf03-75ff-4be9-b0db-2989a714d949
-    BasePortName: 'out: B<T>'
-    BasePortNum: 0
-    TargetNodeGuid: ae8a272e-4b69-4887-a81b-591dc07ff950
-    TargetPortName: 'a: B<T>'
     TargetPortNum: 0
   FrpNodeData:
   - Guid: 44ba897f-66de-4280-a6ea-6780667ca27d
@@ -122,7 +94,7 @@ MonoBehaviour:
       OperatorReturnType: 0
   - Guid: 356ccf03-75ff-4be9-b0db-2989a714d949
     CodeText: 0
-    Position: {x: 792, y: 288}
+    Position: {x: 1102, y: 279}
     OperatorInfo:
       OperatorName: Hold
       OperatorReturnName: 'out: B<T>'
@@ -138,33 +110,5 @@ MonoBehaviour:
       OperatorArgumentNames:
       - 'a: B<T>'
       OperatorReturnType: 1
-  - Guid: ae8a272e-4b69-4887-a81b-591dc07ff950
-    CodeText: x -> x
-    Position: {x: 815, y: 573}
-    OperatorInfo:
-      OperatorName: LiftB
-      OperatorReturnName: 'out: B<T>'
-      OperatorArgumentNames:
-      - 'a: B<T>'
-      OperatorReturnType: 1
-  - Guid: 0a9616b4-6e10-407e-bb1a-9da1c0d17546
-    CodeText: x -> x
-    Position: {x: 506, y: 637}
-    OperatorInfo:
-      OperatorName: LiftB
-      OperatorReturnName: 'out: B<T>'
-      OperatorArgumentNames:
-      - 'a: B<T>'
-      OperatorReturnType: 1
-  - Guid: d193a709-1945-4df4-ae1d-2a3b3b7e19c6
-    CodeText: (x, y) -> x + y
-    Position: {x: 348, y: 438}
-    OperatorInfo:
-      OperatorName: SnapshotE
-      OperatorReturnName: 'out: E<T>'
-      OperatorArgumentNames:
-      - 'a: E<T>'
-      - 'b: B<T>'
-      OperatorReturnType: 0
   ExposedProperties: []
   CommentBlockData: []

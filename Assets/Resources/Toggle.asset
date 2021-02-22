@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97e84e64d9c6024c98f959834f525a8, type: 3}
+  m_Name: Toggle
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - ConnectionName: flagEvent
+    BaseNodeGuid: 0f754a49-4da9-454b-98c9-caa311c6dc40
+    BasePortName: 'out: E<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 0a196eb0-0f27-4074-82bc-d5186ff9e054
+    TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: validEvent
+    BaseNodeGuid: 0a196eb0-0f27-4074-82bc-d5186ff9e054
+    BasePortName: 'out: E<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 439d9e71-7288-4afb-bf1f-bef8c24b8507
+    TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: text
+    BaseNodeGuid: d58698e4-8a4b-4be5-9a31-feeddf6a930e
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 439d9e71-7288-4afb-bf1f-bef8c24b8507
+    TargetPortName: 'b: B<T>'
+    TargetPortNum: 1
+  - ConnectionName: message
+    BaseNodeGuid: 99a4e7b2-5609-4c50-b02e-272edb5f7358
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: dc61c1a3-0ffa-4905-9966-c71023080d5e
+    TargetPortName: B<T>
+    TargetPortNum: 0
+  - ConnectionName: button
+    BaseNodeGuid: de95bb3d-ae4c-4fb6-8767-301e66fcb6de
+    BasePortName: 'out: E<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 0f754a49-4da9-454b-98c9-caa311c6dc40
+    TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: textEvent
+    BaseNodeGuid: 439d9e71-7288-4afb-bf1f-bef8c24b8507
+    BasePortName: 'out: E<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 3dcae986-032b-454c-81d4-42ece38a57ca
+    TargetPortName: E<T>
+    TargetPortNum: 0
+  - ConnectionName: text
+    BaseNodeGuid: d58698e4-8a4b-4be5-9a31-feeddf6a930e
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 74a11510-240a-4809-8445-1964c6f2ff6a
+    TargetPortName: 'a: B<T>'
+    TargetPortNum: 0
+  - ConnectionName: toggle
+    BaseNodeGuid: 78970963-9ea8-4bda-b6dd-1f5a1940cfd9
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 74a11510-240a-4809-8445-1964c6f2ff6a
+    TargetPortName: 'b: B<T>'
+    TargetPortNum: 1
+  - ConnectionName: isValid
+    BaseNodeGuid: 74a11510-240a-4809-8445-1964c6f2ff6a
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 99a4e7b2-5609-4c50-b02e-272edb5f7358
+    TargetPortName: 'a: B<T>'
+    TargetPortNum: 0
+  - ConnectionName: isValid
+    BaseNodeGuid: 74a11510-240a-4809-8445-1964c6f2ff6a
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 0f754a49-4da9-454b-98c9-caa311c6dc40
+    TargetPortName: 'b: B<T>'
+    TargetPortNum: 1
+  FrpNodeData:
+  - Guid: 0f754a49-4da9-454b-98c9-caa311c6dc40
+    CodeText: (btn, flag) => flag
+    Position: {x: 415, y: -175}
+    OperatorInfo:
+      OperatorName: SnapshotE
+      OperatorReturnName: 'out: E<T>'
+      OperatorArgumentNames:
+      - 'a: E<T>'
+      - 'b: B<T>'
+      OperatorReturnType: 0
+  - Guid: 0a196eb0-0f27-4074-82bc-d5186ff9e054
+    CodeText: flag => flag
+    Position: {x: 891, y: -155}
+    OperatorInfo:
+      OperatorName: FilterE
+      OperatorReturnName: 'out: E<T>'
+      OperatorArgumentNames:
+      - 'a: E<T>'
+      OperatorReturnType: 0
+  - Guid: 439d9e71-7288-4afb-bf1f-bef8c24b8507
+    CodeText: (evt, txt) => txt
+    Position: {x: 1385, y: -141}
+    OperatorInfo:
+      OperatorName: SnapshotE
+      OperatorReturnName: 'out: E<T>'
+      OperatorArgumentNames:
+      - 'a: E<T>'
+      - 'b: B<T>'
+      OperatorReturnType: 0
+  - Guid: 99a4e7b2-5609-4c50-b02e-272edb5f7358
+    CodeText: 'flag => flag ? ''OK'' : ''NG'''
+    Position: {x: 1109, y: 241}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames:
+      - 'a: B<T>'
+      OperatorReturnType: 1
+  - Guid: d58698e4-8a4b-4be5-9a31-feeddf6a930e
+    CodeText: Text
+    Position: {x: 78, y: 2}
+    OperatorInfo:
+      OperatorName: DomInputB
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames: []
+      OperatorReturnType: 1
+  - Guid: 78970963-9ea8-4bda-b6dd-1f5a1940cfd9
+    CodeText: ToggleButton
+    Position: {x: 56, y: 215}
+    OperatorInfo:
+      OperatorName: DomInputB
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames: []
+      OperatorReturnType: 1
+  - Guid: dc61c1a3-0ffa-4905-9966-c71023080d5e
+    CodeText: textLabel
+    Position: {x: 1647, y: 231}
+    OperatorInfo:
+      OperatorName: DomOutputB
+      OperatorReturnName: None
+      OperatorArgumentNames:
+      - B<T>
+      OperatorReturnType: 1
+  - Guid: de95bb3d-ae4c-4fb6-8767-301e66fcb6de
+    CodeText: Button
+    Position: {x: 74, y: -192}
+    OperatorInfo:
+      OperatorName: DomInputE
+      OperatorReturnName: 'out: E<T>'
+      OperatorArgumentNames: []
+      OperatorReturnType: 0
+  - Guid: 3dcae986-032b-454c-81d4-42ece38a57ca
+    CodeText: sendDB
+    Position: {x: 1910, y: -135}
+    OperatorInfo:
+      OperatorName: DomOutputE
+      OperatorReturnName: None
+      OperatorArgumentNames:
+      - E<T>
+      OperatorReturnType: 1
+  - Guid: 74a11510-240a-4809-8445-1964c6f2ff6a
+    CodeText: (txt, tgl) => ( !tgl || txt.length >= 4 )
+    Position: {x: 471, y: 235}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames:
+      - 'a: B<T>'
+      - 'b: B<T>'
+      OperatorReturnType: 1
+  ExposedProperties: []
+  CommentBlockData: []

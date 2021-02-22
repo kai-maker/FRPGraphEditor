@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97e84e64d9c6024c98f959834f525a8, type: 3}
+  m_Name: Submit
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - ConnectionName: cIsValid
+    BaseNodeGuid: 5ec15bee-1e08-40f0-b2c2-63fa904d4caf
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: a262ed06-e68e-44d8-a713-24d1c61e1630
+    TargetPortName: 'b: B<T>'
+    TargetPortNum: 1
+  - ConnectionName: sSubmitButton
+    BaseNodeGuid: d78a9bdc-1dd7-4f7c-b24c-5e58cb20a012
+    BasePortName: 'out: E<T>'
+    BasePortNum: 0
+    TargetNodeGuid: a262ed06-e68e-44d8-a713-24d1c61e1630
+    TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: sIsValid
+    BaseNodeGuid: a262ed06-e68e-44d8-a713-24d1c61e1630
+    BasePortName: 'out: E<T>'
+    BasePortNum: 0
+    TargetNodeGuid: e4e995fc-3a38-4235-8a88-b679ab4e1242
+    TargetPortName: 'a: E<T>'
+    TargetPortNum: 0
+  - ConnectionName: sOnValid
+    BaseNodeGuid: e4e995fc-3a38-4235-8a88-b679ab4e1242
+    BasePortName: 'out: E<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 96450819-e1b0-4e68-a7f2-853327066f5c
+    TargetPortName: E<T>
+    TargetPortNum: 0
+  - ConnectionName: cEnableFlag
+    BaseNodeGuid: b99ced2e-2d29-4c7d-9297-872841552ecb
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 5ec15bee-1e08-40f0-b2c2-63fa904d4caf
+    TargetPortName: 'a: B<T>'
+    TargetPortNum: 0
+  - ConnectionName: cTextField
+    BaseNodeGuid: bab7fd26-3332-4c6b-8330-307df2b3917d
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 5ec15bee-1e08-40f0-b2c2-63fa904d4caf
+    TargetPortName: 'a: B<T>'
+    TargetPortNum: 0
+  - ConnectionName: cIsValid
+    BaseNodeGuid: 5ec15bee-1e08-40f0-b2c2-63fa904d4caf
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 451a80f6-022c-41d1-9713-095404c8d3e5
+    TargetPortName: 'a: B<T>'
+    TargetPortNum: 0
+  - ConnectionName: cLabel
+    BaseNodeGuid: 451a80f6-022c-41d1-9713-095404c8d3e5
+    BasePortName: 'out: B<T>'
+    BasePortNum: 0
+    TargetNodeGuid: 32f5d5fd-5c51-4e0f-9808-4291b4874e50
+    TargetPortName: B<T>
+    TargetPortNum: 0
+  FrpNodeData:
+  - Guid: 5ec15bee-1e08-40f0-b2c2-63fa904d4caf
+    CodeText: (a, b) -> !a || b.length >= 4
+    Position: {x: 643, y: 193}
+    OperatorInfo:
+      OperatorName: Lift2B
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames:
+      - 'a: B<T>'
+      - 'a: B<T>'
+      OperatorReturnType: 1
+  - Guid: a262ed06-e68e-44d8-a713-24d1c61e1630
+    CodeText: (a, b) -> b
+    Position: {x: 978, y: 178}
+    OperatorInfo:
+      OperatorName: SnapshotE
+      OperatorReturnName: 'out: E<T>'
+      OperatorArgumentNames:
+      - 'a: E<T>'
+      - 'b: B<T>'
+      OperatorReturnType: 0
+  - Guid: e4e995fc-3a38-4235-8a88-b679ab4e1242
+    CodeText: a -> a
+    Position: {x: 1250, y: 210}
+    OperatorInfo:
+      OperatorName: FilterE
+      OperatorReturnName: 'out: E<T>'
+      OperatorArgumentNames:
+      - 'a: E<T>'
+      OperatorReturnType: 0
+  - Guid: 96450819-e1b0-4e68-a7f2-853327066f5c
+    CodeText: Write code here
+    Position: {x: 1514, y: 216}
+    OperatorInfo:
+      OperatorName: EndE
+      OperatorReturnName: None
+      OperatorArgumentNames:
+      - E<T>
+      OperatorReturnType: 0
+  - Guid: d78a9bdc-1dd7-4f7c-b24c-5e58cb20a012
+    CodeText: Write code here
+    Position: {x: 705, y: 64}
+    OperatorInfo:
+      OperatorName: OneE
+      OperatorReturnName: 'out: E<T>'
+      OperatorArgumentNames: []
+      OperatorReturnType: 0
+  - Guid: b99ced2e-2d29-4c7d-9297-872841552ecb
+    CodeText: Write code here
+    Position: {x: 426, y: 136}
+    OperatorInfo:
+      OperatorName: InputB
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames: []
+      OperatorReturnType: 1
+  - Guid: bab7fd26-3332-4c6b-8330-307df2b3917d
+    CodeText: Write code here
+    Position: {x: 413, y: 276}
+    OperatorInfo:
+      OperatorName: InputB
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames: []
+      OperatorReturnType: 1
+  - Guid: 451a80f6-022c-41d1-9713-095404c8d3e5
+    CodeText: 'x -> x ? "OK" : "NG"'
+    Position: {x: 906, y: 350}
+    OperatorInfo:
+      OperatorName: LiftB
+      OperatorReturnName: 'out: B<T>'
+      OperatorArgumentNames:
+      - 'a: B<T>'
+      OperatorReturnType: 1
+  - Guid: 32f5d5fd-5c51-4e0f-9808-4291b4874e50
+    CodeText: Write code here
+    Position: {x: 1205, y: 358}
+    OperatorInfo:
+      OperatorName: EndB
+      OperatorReturnName: None
+      OperatorArgumentNames:
+      - B<T>
+      OperatorReturnType: 1
+  ExposedProperties: []
+  CommentBlockData: []
